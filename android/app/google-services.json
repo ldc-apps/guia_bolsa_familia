@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "258314208883",
+    "project_id": "ldc-bf-brazil",
+    "storage_bucket": "ldc-bf-brazil.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:258314208883:android:c1f2fbc8750155054b0c06",
+        "android_client_info": {
+          "package_name": "com.ldcapps.bf_brasil"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "258314208883-k14m8llspvq6altfadqdnn318b04nmmb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaBccl8WAShPy3-HF0jD_tZFUNkpL0IH4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "258314208883-k14m8llspvq6altfadqdnn318b04nmmb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
