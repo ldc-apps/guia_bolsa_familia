@@ -105,7 +105,7 @@ class _LoanRulesPageState extends State<LoanRulesPage> {
                 'O governo não poderá ser responsabilizado se o empréstimo não for pago ao banco',
                 'Valor do desconto mensal: na Caixa varia de R\$  15 a R\$ 160',
                 'Documentos exigidos: RG ou carteira de motorista e CPF',
-                'A prestação máxima é de R\$ 160, que corresponde a 40% do benefício permanente, de R\$ 400  (o valor original antes do pagamento adicional de R\$ 200, que termina em 31 de dezembro de 2022);',
+                'A prestação máxima é de R\$ 160, que corresponde a 40% do benefício permanente, de R\$ 400  (o valor original antes do pagamento adicional de R\$ 200, que termina em 31 de dezembro de 2023);',
                 'O empréstimo pode ser parcelado em até 24 meses',
                 'A parcela mínima é de R\$ 15, variando conforme o valor do crédito liberado',
               ].map((e) => labelItem(e)).toList(),
