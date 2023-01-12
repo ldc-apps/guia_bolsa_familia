@@ -1,4 +1,3 @@
-import 'package:aid_brazil/app/ad/ad_controller.dart';
 import 'package:aid_brazil/app/components/app_scaffold.dart';
 import 'package:aid_brazil/app/components/h.dart';
 import 'package:aid_brazil/app/modules/query/query_provider.dart';
@@ -22,9 +21,10 @@ class _QueryLoadingPageState extends State<QueryLoadingPage> {
   }
 
   Future<void> initMethod() async {
-    final response = await QueryProvider().getBenefit(widget.search);
-    await AdController.checkAndshowQueryAd(
-            () => Navigator.pop(context, response));
+    QueryProvider().getBenefit(widget.search).then((response) {
+      Future.delayed(const Duration(seconds: 3))
+          .then((_) => Navigator.pop(context, response));
+    });
   }
 
   @override

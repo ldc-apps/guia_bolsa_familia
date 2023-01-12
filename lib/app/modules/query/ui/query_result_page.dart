@@ -41,7 +41,7 @@ class _QueryResultPageState extends State<QueryResultPage> {
         await AdController.showInterstitialAd(context);
         return true;
       },
-      active: !AdController.adConfig.banner.active,
+      active: AdController.adConfig.banner.active,
       behavior: AdBannerStorage.queryResultStream,
       body: _bodyStacked(context),
     );

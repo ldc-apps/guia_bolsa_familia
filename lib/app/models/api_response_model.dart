@@ -1,8 +1,7 @@
-import 'package:dio/dio.dart';
 
 class ApiResponse<T> {
   late T data;
-  late DioError error;
+  late RequestError error;
   bool hasError;
   bool hasData;
 
@@ -12,4 +11,9 @@ class ApiResponse<T> {
   ApiResponse.error(this.error)
       : hasError = true,
         hasData = false;
+}
+
+class RequestError {
+  final String error;
+  RequestError(this.error);
 }

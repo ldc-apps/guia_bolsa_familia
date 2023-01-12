@@ -152,11 +152,11 @@ class AdController {
     });
   }
 
-  static Future<void> checkAndshowQueryAd(Function onComplete) async {
+  static Future<void> checkAndshowQueryAd({Function? onComplete}) async {
     if (AdController.adConfig.canShowRewardedAd) {
-      await AdController.showQueryAd(onComplete);
+      await AdController.showQueryAd(onComplete: onComplete);
     } else {
-      onComplete.call();
+      onComplete?.call();
     }
   }
 
@@ -230,7 +230,6 @@ class AdController {
       List<String> ids, BehaviorSubject<BannerAd?> behavior,
       {bool fromStorage = false}) async {
     if (AdController.adConfig.banner.active) {
-      log('check if has  ${adBannerStorage != behavior && adBannerStorage.value == null}');
       if (!fromStorage && adBannerStorage.value != null) {
         behavior.sink.add(adBannerStorage.value);
         adBannerStorage.add(null);
@@ -281,13 +280,13 @@ class AdController {
     }
   }
 
-  static Future<void> showQueryAd(Function onComplete) async {
+  static Future<void> showQueryAd({Function? onComplete}) async {
     if (adConfig.rewarded.active) {
-      showRewardAd(onComplete);
+      showRewardAd(onComplete: onComplete);
     } else if (adConfig.intersticialRewarded.active) {
-      showRewardedIntersticialAd(onComplete);
+      showRewardedIntersticialAd(onComplete: onComplete);
     } else {
-      showRewardAd(onComplete);
+      showRewardAd(onComplete: onComplete);
     }
   }
 
@@ -345,12 +344,12 @@ class AdController {
     ForegroundService.showForegroundBack = true;
   }
 
-  static void showRewardAd(Function onComplete) async {
+  static void showRewardAd({Function? onComplete}) async {
     if (rewardedStream.value != null) {
       rewardedStream.value!.show(
         onUserEarnedReward: (ad, reward) {
           ForegroundService.showForegroundBack = true;
-          onComplete.call();
+          onComplete?.call();
         },
       );
       rewardedLoadingStream.add(true);
@@ -419,18 +418,18 @@ class AdController {
     // Navigator.pop(contextGlobal, data);
   }
 
-  static void showRewardedIntersticialAd(Function onComplete) async {
+  static void showRewardedIntersticialAd({Function? onComplete}) async {
     if (rewardedIntersticialStream.value != null) {
       rewardedIntersticialStream.value!.show(
         onUserEarnedReward: (ad, reward) {
           ForegroundService.showForegroundBack = true;
-          onComplete.call();
+          onComplete?.call();
         },
       );
     } else {
       rewardedLoadingStream.add(true);
       fetchRewardAd(adConfig.rewarded.id,
-          onComplete: () => showRewardedIntersticialAd(onComplete));
+          onComplete: () => showRewardedIntersticialAd(onComplete: onComplete));
     }
   }
 

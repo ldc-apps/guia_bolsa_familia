@@ -1,7 +1,7 @@
 import 'package:aid_brazil/app/models/app_stream.dart';
 import 'package:aid_brazil/app/modules/new/new_model.dart';
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
 import 'package:webfeed/domain/rss_feed.dart';
 
 class NewController {
@@ -18,9 +18,9 @@ class NewController {
 
   Future<void> init() async {
     try {
-      final response = await Dio().get(
-          'https://news.google.com/rss/search?q=aux%C3%ADlio%20brasil&hl=pt-BR&gl=BR&ceid=BR%3Apt-419');
-      var rssFeed = RssFeed.parse(response.data);
+      final response = await get(
+          Uri.parse('https://news.google.com/rss/search?q=aux%C3%ADlio%20brasil&hl=pt-BR&gl=BR&ceid=BR%3Apt-419'));
+      var rssFeed = RssFeed.parse(response.body);
       List<New> news = [];
       for (var item in rssFeed.items!) {
         String desc = item.description!;

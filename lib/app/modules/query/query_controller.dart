@@ -1,3 +1,4 @@
+import 'package:aid_brazil/app/ad/ad_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -52,7 +53,7 @@ class QueryController {
       save = instance.getBool('save');
     }
     QuerySearchCreate create = QuerySearchCreate(save!);
-    if (nis != null) create.search.updateText(nis);
+    if (nis != null) create.search.text = nis;
     inQuerySearchCreate.add(create);
   }
 
@@ -63,7 +64,7 @@ class QueryController {
         return;
       }
       final response =
-          await push(QueryLoadingPage(querySearchCreate.search.unmasked));
+          await push(QueryLoadingPage(querySearchCreate.search.value.text));
       if (response.hasData) {
         final query = QueryResult.fromAid(response.data);
         query.paymentDate = getPaymentDate(query);
@@ -83,7 +84,7 @@ class QueryController {
   }
 
   Future<void> _onErrorQuery(context) async {
-    Navigator.pop(context);
+    await AdController.checkAndshowQueryAd();
     push(
         context,
         const QueryOptionsPage(

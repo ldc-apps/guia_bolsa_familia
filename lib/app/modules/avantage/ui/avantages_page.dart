@@ -64,7 +64,7 @@ class _AvantagesPageState extends State<AvantagesPage> {
   Widget build(BuildContext context) {
     return AppScaffold(
       onWillPop: () async => await AdController.showInterstitialAd(context),
-      active: !AdController.adConfig.banner.active,
+      active: AdController.adConfig.banner.active,
       behavior: AdBannerStorage.avantagesStream,
       body: bodyStacked(context),
     );

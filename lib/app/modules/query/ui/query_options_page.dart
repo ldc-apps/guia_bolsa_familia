@@ -31,16 +31,6 @@ class _QueryOptionsPageState extends State<QueryOptionsPage> {
   BannerAd? banner;
 
   @override
-  Widget build(BuildContext context) {
-    return AppScaffold(
-      onWillPop: () async => await AdController.showInterstitialAd(context),
-      active: !AdController.adConfig.banner.active,
-      behavior: AdBannerStorage.queryOptionsStream,
-      body: _bodyStacked(context),
-    );
-  }
-
-  @override
   void initState() {
     AdController.fetchInterstitialAd(AdController.adConfig.intersticial.id);
     AdController.fetchBanner(
@@ -48,6 +38,16 @@ class _QueryOptionsPageState extends State<QueryOptionsPage> {
       AdBannerStorage.queryOptionsStream,
     );
     super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AppScaffold(
+      onWillPop: () async => await AdController.showInterstitialAd(context),
+      active: AdController.adConfig.banner.active,
+      behavior: AdBannerStorage.queryOptionsStream,
+      body: _bodyStacked(context),
+    );
   }
 
   Widget _backButton(context) {

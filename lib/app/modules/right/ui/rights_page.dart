@@ -61,7 +61,7 @@ class _RightsPageState extends State<RightsPage> {
   Widget build(BuildContext context) {
     return AppScaffold(
       onWillPop: () async => await AdController.showInterstitialAd(context),
-      active: !AdController.adConfig.banner.active,
+      active: AdController.adConfig.banner.active,
       behavior: AdBannerStorage.rightsStream,
       body: bodyStacked(context),
     );

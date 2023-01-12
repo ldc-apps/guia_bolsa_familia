@@ -1,4 +1,4 @@
 class ApiEndpoints {
   static const benefit =
-      "AUXILIOS/:nis";
+      "NOVO/:nis";
 }

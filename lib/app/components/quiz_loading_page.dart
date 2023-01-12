@@ -20,7 +20,7 @@ class _QuizLoadingPageState extends State<QuizLoadingPage> {
 
   Future<void> initMethod() async {
     await Future.delayed(const Duration(seconds: 3));
-    await AdController.checkAndshowQueryAd(() => Navigator.pop(context));
+    await AdController.checkAndshowQueryAd(onComplete: () => Navigator.pop(context));
   }
 
   @override
