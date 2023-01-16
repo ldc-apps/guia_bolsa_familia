@@ -85,6 +85,8 @@ class AdBannerStorage {
       BehaviorSubject<BannerAd?>.seeded(null);
   static BehaviorSubject<BannerAd?> noFoundStream =
       BehaviorSubject<BannerAd?>.seeded(null);
+  static BehaviorSubject<BannerAd?> exitStream =
+      BehaviorSubject<BannerAd?>.seeded(null);
 
   static BehaviorSubject<BannerAd?> stream(AdBannerEnum enumer) {
     switch (enumer) {
@@ -168,6 +170,8 @@ class AdBannerStorage {
         return searchNisInssStream;
       case AdBannerEnum.searchNisPhone:
         return searchNisPhoneStream;
+      case AdBannerEnum.searchNisPhone:
+        return exitStream;
       default:
         return noFoundStream;
     }

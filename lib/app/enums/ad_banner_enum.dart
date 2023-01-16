@@ -1,4 +1,4 @@
-enum AdBannerEnum{
+enum AdBannerEnum {
   attendanceHome,
   attendancePhoneCaixa,
   avantages,
@@ -39,4 +39,5 @@ enum AdBannerEnum{
   searchNisHome,
   searchNisInss,
   searchNisPhone,
+  exit
 }

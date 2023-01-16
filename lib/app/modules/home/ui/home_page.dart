@@ -1,3 +1,4 @@
+import 'package:aid_brazil/app/components/exit_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -53,6 +54,7 @@ class _HomePageState extends State<HomePage> {
           await showDialog(
               context: context, builder: (_) => const RateDialog());
         }
+        push(context, const ExitPage());
         return true;
       },
       child: AppScaffold(
@@ -192,14 +194,14 @@ class _HomePageState extends State<HomePage> {
               child: Icon(
                 item.icon,
                 size: 84,
-                color: AppColors.green,
+                color: const Color(0xFFE45200),
               ),
             ),
             Text(
               item.label,
               textAlign: TextAlign.center,
               style: const TextStyle(
-                color: AppColors.green,
+                color: Color(0xFFE45200),
                 fontWeight: FontWeight.w500,
                 fontSize: 18,
               ),
