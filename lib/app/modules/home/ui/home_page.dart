@@ -27,6 +27,15 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  @override
+  void initState() {
+    AdController.fetchInterstitialAd(AdController.adConfig.intersticial.id);
+    AdController.fetchBanner(
+      AdController.adConfig.banner.id,
+      AdBannerStorage.homeStream,
+    );
+    super.initState();
+  }
   String get _getTitleByHour {
     final now = DateTime.now();
 
@@ -54,7 +63,7 @@ class _HomePageState extends State<HomePage> {
           await showDialog(
               context: context, builder: (_) => const RateDialog());
         }
-        push(context, const ExitPage());
+        push(context, ExitPage());
         return true;
       },
       child: AppScaffold(
@@ -65,15 +74,6 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  @override
-  void initState() {
-    AdController.fetchInterstitialAd(AdController.adConfig.intersticial.id);
-    AdController.fetchBanner(
-      AdController.adConfig.banner.id,
-      AdBannerStorage.homeStream,
-    );
-    super.initState();
-  }
 
   Widget _body(_) {
     final homeItens = HomeItem.itens(_);
@@ -194,14 +194,14 @@ class _HomePageState extends State<HomePage> {
               child: Icon(
                 item.icon,
                 size: 84,
-                color: const Color(0xFFE45200),
+                color: AppColors.green,
               ),
             ),
             Text(
               item.label,
               textAlign: TextAlign.center,
               style: const TextStyle(
-                color: Color(0xFFE45200),
+                color: AppColors.green,
                 fontWeight: FontWeight.w500,
                 fontSize: 18,
               ),
