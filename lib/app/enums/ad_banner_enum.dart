@@ -39,5 +39,8 @@ enum AdBannerEnum {
   searchNisHome,
   searchNisInss,
   searchNisPhone,
-  exit
+  exit,
+  nisSearch,
+  nisResult,
+  nisOptions,
 }

@@ -9,6 +9,7 @@ import 'package:aid_brazil/app/components/h.dart';
 import 'package:aid_brazil/app/components/module_title.dart';
 import 'package:aid_brazil/app/components/page_title.dart';
 import 'package:aid_brazil/app/modules/search_nis/search_nis_model.dart';
+import 'package:aid_brazil/app/modules/search_nis/ui/search_nis_page.dart';
 import 'package:aid_brazil/app/utils/app_colors.dart';
 import 'package:aid_brazil/app/utils/global_resource.dart';
 import 'package:flutter/material.dart';
@@ -52,7 +53,7 @@ class _SearchNisHomePageState extends State<SearchNisHomePage> {
       padding: EdgeInsets.zero,
       children: [
         ContainerBackground(
-          height: 300,
+          height: 320,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -63,7 +64,28 @@ class _SearchNisHomePageState extends State<SearchNisHomePage> {
               const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 20),
                   child: PageTitle(
-                      'Consultar seu NIS', 'Veja formas de consultar seu NIS'))
+                      'Consultar seu NIS', 'Veja formas de consultar seu NIS')),
+                      const H(32),
+              InkWell(
+                onTap: () => push(context, const SearchNisPage()),
+                child: Container(
+                    padding: const EdgeInsets.all(16),
+                    margin: const EdgeInsets.symmetric(horizontal: 24),
+                    width: double.maxFinite,
+                    decoration: BoxDecoration(
+                        color: AppColors.greenLight,
+                        borderRadius: BorderRadius.circular(16)),
+                    child: const Center(
+                      child: Text(
+                        'CONSULTAR BENEFÍCIO',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w900,
+                          color: AppColors.greenDark,
+                        ),
+                      ),
+                    )),
+              ),
             ],
           ),
         ),
@@ -79,7 +101,7 @@ class _SearchNisHomePageState extends State<SearchNisHomePage> {
       child: Column(
         children: [
           Container(
-            transform: Matrix4.translationValues(0, -140, 0),
+            transform: Matrix4.translationValues(0, -80, 0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

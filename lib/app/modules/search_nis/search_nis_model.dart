@@ -2,6 +2,7 @@ import 'package:aid_brazil/app/modules/search_nis/ui/search_nis_card_page.dart';
 import 'package:aid_brazil/app/modules/search_nis/ui/search_nis_cpf_page.dart';
 import 'package:aid_brazil/app/modules/search_nis/ui/search_nis_inss_page.dart';
 import 'package:aid_brazil/app/modules/search_nis/ui/search_nis_phone_page.dart';
+import 'package:extended_masked_text/extended_masked_text.dart';
 import 'package:flutter/material.dart';
 
 class SearchNisItem {
@@ -121,4 +122,15 @@ class SearchNisStep {
               'https://ldcapps.com/wp-content/uploads/2022/11/consultar-nis-pelo-site-meu-inss-step-7.png',
         ),
       ];
+}
+
+class NisSearchCreate {
+  MaskedTextController search = MaskedTextController(mask: '000.000.000-00');
+  // mask: '00000000000'
+  bool save;
+
+  NisSearchCreate(this.save);
+
+  Map<String, String> toQueryParams() =>
+      {'user': '33labs', 'client': search.value.text};
 }
