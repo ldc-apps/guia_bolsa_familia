@@ -24,6 +24,31 @@ class QueryProvider {
         if (aids.isNotEmpty) {
           return ApiResponse.complete(aids.last);
         } else {
+          return await getBenefitBackup(nis);
+        }
+      } else {
+        return await getBenefitBackup(nis);
+      }
+    } catch (e) {
+      return await getBenefitBackup(nis);
+    }
+  }
+
+  Future<ApiResponse<AidBrazil>> getBenefitBackup(String nis) async {
+    try {
+      final res = await get(
+          Uri.parse(
+              'https://api.portaldatransparencia.gov.br/api-de-dados/auxilio-emergencial-por-cpf-ou-nis?codigoBeneficiario=$nis&pagina=1'),
+          headers: {
+            "chave-api-dados": "ea95534f2276bec0a97d361a73757181",
+          });
+      if (res.statusCode == 200) {
+        List<AidBrazil> aids =
+            jsonDecode(res.body).map<AidBrazil>((e) => AidBrazil.fromJson(e)).toList();
+        aids.sort((a, b) => a.mesDisponibilizacao!.compareTo(b.mesDisponibilizacao!));
+        if (aids.isNotEmpty) {
+          return ApiResponse.complete(aids.last);
+        } else {
           return ApiResponse.error(RequestError(
             'Não há dados disponíveis',
           ));

@@ -88,8 +88,8 @@ class _QuerySearchPageState extends State<QuerySearchPage> {
                 onTap: () => AdController.showInterstitialAd(context),
               ),
               const H(36),
-              const PageTitle('Consulta Rápida',
-                  'Insira   abaixo   seu   NIS   e   toque   em   CONSULTAR.'),
+              const PageTitle(
+                  'Consulta Rápida', 'Insira   abaixo   seu   NIS   e   toque   em   CONSULTAR.'),
               const H(36),
               const Text(
                 'Digite seu NIS aqui.',
@@ -104,12 +104,10 @@ class _QuerySearchPageState extends State<QuerySearchPage> {
                 type: TextInputType.number,
                 icon: Icons.help_outline,
                 onTapIcon: () {
-                  showDialog(
-                      context: context, builder: (_) => _dialogNIS(context));
+                  showDialog(context: context, builder: (_) => _dialogNIS(context));
                 },
                 onChange: (v) {
-                  create.search =
-                      MaskedTextController(mask: '00000000000', text: v);
+                  create.search = MaskedTextController(mask: '00000000000', text: v);
                   _queryController.inQuerySearchCreate.add(create);
                 },
                 label: empty,
@@ -120,8 +118,7 @@ class _QuerySearchPageState extends State<QuerySearchPage> {
                 onTap: () async {
                   create.save = !create.save;
                   _queryController.inQuerySearchCreate.add(create);
-                  (await SharedPreferences.getInstance())
-                      .setBool('save', create.save);
+                  (await SharedPreferences.getInstance()).setBool('save', create.save);
                 },
                 child: Container(
                   transform: Matrix4.translationValues(-6, 0, 0),
@@ -130,15 +127,13 @@ class _QuerySearchPageState extends State<QuerySearchPage> {
                       IgnorePointer(
                         ignoring: true,
                         child: Checkbox(
-                          materialTapTargetSize:
-                              MaterialTapTargetSize.shrinkWrap,
+                          materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                           visualDensity: VisualDensity.compact,
                           value: create.save,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(4),
                           ),
-                          fillColor:
-                              MaterialStateProperty.all(AppColors.greenLight),
+                          fillColor: MaterialStateProperty.all(AppColors.greenLight),
                           onChanged: (v) {},
                         ),
                       ),
@@ -159,8 +154,7 @@ class _QuerySearchPageState extends State<QuerySearchPage> {
                 child: Container(
                   padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
-                      color: AppColors.greenLight,
-                      borderRadius: BorderRadius.circular(16)),
+                      color: AppColors.greenLight, borderRadius: BorderRadius.circular(16)),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -276,8 +270,7 @@ class _QuerySearchPageState extends State<QuerySearchPage> {
                     imageUrl:
                         'https://ldcapps.com/wp-content/uploads/2022/11/mulher-segurando-cartao-auxilio-brasil.jpg',
                     placeholder: (context, url) => const Loading(),
-                    errorWidget: (context, url, error) =>
-                        const Icon(Icons.error),
+                    errorWidget: (context, url, error) => const Icon(Icons.error),
                     fit: BoxFit.fill,
                   ),
                 )),
@@ -327,8 +320,7 @@ class _QuerySearchPageState extends State<QuerySearchPage> {
             decoration: const BoxDecoration(
               color: AppColors.greenLight,
               borderRadius: BorderRadius.only(
-                  bottomRight: Radius.circular(16),
-                  bottomLeft: Radius.circular(16)),
+                  bottomRight: Radius.circular(16), bottomLeft: Radius.circular(16)),
             ),
             child: Row(
               children: [
@@ -342,8 +334,7 @@ class _QuerySearchPageState extends State<QuerySearchPage> {
                   width: 36,
                   height: 36,
                   decoration: BoxDecoration(
-                      color: AppColors.greenDark,
-                      borderRadius: BorderRadius.circular(4)),
+                      color: AppColors.greenDark, borderRadius: BorderRadius.circular(4)),
                   child: const Icon(
                     Icons.arrow_forward_ios_outlined,
                     color: AppColors.greenLight,

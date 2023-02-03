@@ -3,7 +3,7 @@ description: A new Flutter project.
 
 publish_to: "none"
 
-version: 0.0.7
+version: 0.0.8
 
 environment:
   sdk: ">=2.17.6 <3.0.0"
@@ -38,6 +38,7 @@ dependencies:
   flutter_fgbg: ^0.2.0
   cached_network_image: ^3.2.2
   flutter_native_splash: ^2.2.0+1
+  firebase_crashlytics: ^2.9.0
 
 dev_dependencies:
   flutter_test:
@@ -136,3 +137,5 @@ flutter:
         - asset: assets/fonts/roboto/Roboto-LightItalic.ttf
           weight: 300
           style: italic
+
+
