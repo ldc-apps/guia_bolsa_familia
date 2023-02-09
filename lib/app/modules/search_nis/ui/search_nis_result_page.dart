@@ -25,10 +25,10 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 import '../../../components/back.dart';
 import '../../../components/background_gradient.dart';
 
-class SearchNisResultPage extends StatefulWidget {
+class SearchNisResultPage extends JourneyStatefulWidget {
   final QueryResult result;
 
-  const SearchNisResultPage(this.result, {Key? key}) : super(key: key);
+  const SearchNisResultPage(this.result, {Key? key}) : super(key: key, name: 'SearchNisResultPage');
 
   @override
   State<SearchNisResultPage> createState() => _SearchNisResultPageState();
@@ -110,7 +110,8 @@ class _SearchNisResultPageState extends State<SearchNisResultPage> {
                     controller: TextEditingController(text: widget.result.nis),
                     type: TextInputType.number,
                     icon: Icons.copy,
-                    onChange: (v) => _nisController.inNisSearchCreate.add(create),
+                    onChange: (v) =>
+                        _nisController.inNisSearchCreate.add(create),
                     label: empty,
                     hint: '000.000.000-00',
                   ),
@@ -120,14 +121,16 @@ class _SearchNisResultPageState extends State<SearchNisResultPage> {
               InkWell(
                 onTap: () async {
                   await _quaryController.initQuerySearch();
-                  _quaryController.querySearchCreate.search.text = widget.result.nis;
+                  _quaryController.querySearchCreate.search.text =
+                      widget.result.nis;
                   _quaryController.querySearchCreate.save = true;
                   _quaryController.onSearchQuery(context);
                 },
                 child: Container(
                   padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
-                      color: AppColors.greenLight, borderRadius: BorderRadius.circular(16)),
+                      color: AppColors.greenLight,
+                      borderRadius: BorderRadius.circular(16)),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -243,7 +246,8 @@ class _SearchNisResultPageState extends State<SearchNisResultPage> {
                     imageUrl:
                         'https://ldcapps.com/wp-content/uploads/2022/11/mulher-segurando-cartao-auxilio-brasil.jpg',
                     placeholder: (context, url) => const Loading(),
-                    errorWidget: (context, url, error) => const Icon(Icons.error),
+                    errorWidget: (context, url, error) =>
+                        const Icon(Icons.error),
                     fit: BoxFit.fill,
                   ),
                 )),
@@ -293,7 +297,8 @@ class _SearchNisResultPageState extends State<SearchNisResultPage> {
             decoration: const BoxDecoration(
               color: AppColors.greenLight,
               borderRadius: BorderRadius.only(
-                  bottomRight: Radius.circular(16), bottomLeft: Radius.circular(16)),
+                  bottomRight: Radius.circular(16),
+                  bottomLeft: Radius.circular(16)),
             ),
             child: Row(
               children: [
@@ -307,7 +312,8 @@ class _SearchNisResultPageState extends State<SearchNisResultPage> {
                   width: 36,
                   height: 36,
                   decoration: BoxDecoration(
-                      color: AppColors.greenDark, borderRadius: BorderRadius.circular(4)),
+                      color: AppColors.greenDark,
+                      borderRadius: BorderRadius.circular(4)),
                   child: const Icon(
                     Icons.arrow_forward_ios_outlined,
                     color: AppColors.greenLight,

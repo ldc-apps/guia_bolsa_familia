@@ -3,8 +3,10 @@ import 'dart:math';
 import 'package:aid_brazil/app/app_controller.dart';
 import 'package:aid_brazil/app/services/foreground_service.dart';
 import 'package:aid_brazil/app/services/notification_service.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 const String empty = '';
@@ -47,7 +49,7 @@ dynamic push([a, b]) async {
     context = b;
   }
   var result = await Navigator.push(context ?? contextGlobal,
-      MaterialPageRoute(builder: (_) => widget ?? Container()));
+      MaterialPageRoute(builder: (q_) => widget ?? Container()));
   return result;
 }
 
@@ -102,4 +104,37 @@ void execUrl(String url) {
 void showDialogAndPush(context, Widget dialog, Widget page) async {
   await showDialog(context: context, builder: (_) => dialog);
   push(context, page);
+}
+
+void pop([BuildContext? context]) => Navigator.pop(context ?? contextGlobal);
+
+// AppLocalizations get T => AppLocalizations.of(contextGlobal)!;
+
+DateTime? parsePeriod(String? period) => period != null
+    ? DateTime(
+        int.parse(period.split('-').last), int.parse(period.split('-')[1]), 0)
+    : null;
+
+String doubleToCurrency(double? value) {
+  if (value == null) return '-';
+  return 'R\$ ${value.toStringAsFixed(2).replaceAll('.', ',')}';
+}
+
+AppLocalizations get T => AppLocalizations.of(contextGlobal)!;
+
+abstract class JourneyStatefulWidget extends StatefulWidget {
+  final String name;
+
+  const JourneyStatefulWidget({required this.name, Key? key}) : super(key: key);
+
+  @override
+  StatefulElement createElement() {
+    FirebaseAnalytics.instance.logEvent(
+      name: 'app_screen_view',
+      parameters: {
+        'app_screen': name,
+      },
+    );
+    return StatefulElement(this);
+  }
 }

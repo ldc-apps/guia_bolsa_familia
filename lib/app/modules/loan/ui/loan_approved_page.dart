@@ -8,13 +8,14 @@ import 'package:aid_brazil/app/components/h.dart';
 import 'package:aid_brazil/app/components/w.dart';
 import 'package:aid_brazil/app/utils/app_colors.dart';
 import 'package:aid_brazil/app/utils/app_theme.dart';
+import 'package:aid_brazil/app/utils/global_resource.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 import '../../../components/privacy_policy.dart';
 
-class LoanApprovedPage extends StatefulWidget {
-  const LoanApprovedPage({super.key});
+class LoanApprovedPage extends JourneyStatefulWidget {
+  const LoanApprovedPage({super.key}) : super(name: 'LoanApprovedPage');
 
   @override
   State<LoanApprovedPage> createState() => _LoanApprovedPageState();

@@ -2,12 +2,13 @@ import 'package:aid_brazil/app/components/app_scaffold.dart';
 import 'package:aid_brazil/app/components/h.dart';
 import 'package:aid_brazil/app/modules/query/query_provider.dart';
 import 'package:aid_brazil/app/utils/app_colors.dart';
+import 'package:aid_brazil/app/utils/global_resource.dart';
 import 'package:flutter/material.dart';
 
-class QueryLoadingPage extends StatefulWidget {
+class QueryLoadingPage extends JourneyStatefulWidget {
   final String search;
 
-  const QueryLoadingPage(this.search, {Key? key}) : super(key: key);
+  const QueryLoadingPage(this.search, {Key? key}) : super(key: key, name: 'QueryLoadingPage');
 
   @override
   State<QueryLoadingPage> createState() => _QueryLoadingPageState();

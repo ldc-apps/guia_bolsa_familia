@@ -1,3 +1,4 @@
+import 'package:aid_brazil/app/utils/global_resource.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
@@ -14,8 +15,8 @@ import '../../../components/page_title.dart';
 import '../../../components/privacy_policy.dart';
 import '../attendance_model.dart';
 
-class AttendanceHomePage extends StatefulWidget {
-  const AttendanceHomePage({super.key});
+class AttendanceHomePage extends JourneyStatefulWidget {
+  const AttendanceHomePage({super.key}) : super(name: 'AttendanceHomePage');
 
   @override
   State<AttendanceHomePage> createState() => _AttendanceHomePageState();

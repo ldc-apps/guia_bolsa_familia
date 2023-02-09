@@ -33,7 +33,7 @@ class Back extends StatelessWidget {
             margin: EdgeInsets.all(margin),
             decoration: BoxDecoration(
                 color: color, borderRadius: BorderRadius.circular(10)),
-            padding: const  EdgeInsets.all(6),
+            padding: const EdgeInsets.all(6),
             child: const Icon(
               Icons.arrow_back_ios_new,
               color: AppColors.greenLight,

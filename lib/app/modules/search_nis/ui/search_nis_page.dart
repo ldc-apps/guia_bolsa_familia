@@ -24,8 +24,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../../components/back.dart';
 import '../../../components/background_gradient.dart';
 
-class SearchNisPage extends StatefulWidget {
-  const SearchNisPage({Key? key}) : super(key: key);
+class SearchNisPage extends JourneyStatefulWidget {
+  const SearchNisPage({Key? key}) : super(key: key, name: 'SearchNisPage');
 
   @override
   State<SearchNisPage> createState() => _SearchNisPageState();
@@ -87,8 +87,8 @@ class _SearchNisPageState extends State<SearchNisPage> {
                 onTap: () => AdController.showInterstitialAd(context),
               ),
               const H(36),
-              const PageTitle(
-                  'Consulta Rápida', 'Consulte seu NIS, digitando seu CPF no campo abaixo.'),
+              const PageTitle('Consulta Rápida',
+                  'Consulte seu NIS, digitando seu CPF no campo abaixo.'),
               const H(36),
               const Text(
                 'Digite seu CPF aqui.',
@@ -103,7 +103,8 @@ class _SearchNisPageState extends State<SearchNisPage> {
                 type: TextInputType.number,
                 icon: Icons.help_outline,
                 onTapIcon: () {
-                  showDialog(context: context, builder: (_) => _dialogNIS(context));
+                  showDialog(
+                      context: context, builder: (_) => _dialogNIS(context));
                 },
                 onChange: (v) => _nisController.inNisSearchCreate.add(create),
                 label: empty,
@@ -114,7 +115,8 @@ class _SearchNisPageState extends State<SearchNisPage> {
                 onTap: () async {
                   create.save = !create.save;
                   _nisController.inNisSearchCreate.add(create);
-                  (await SharedPreferences.getInstance()).setBool('saveCPF', create.save);
+                  (await SharedPreferences.getInstance())
+                      .setBool('saveCPF', create.save);
                 },
                 child: Container(
                   transform: Matrix4.translationValues(-6, 0, 0),
@@ -123,13 +125,15 @@ class _SearchNisPageState extends State<SearchNisPage> {
                       IgnorePointer(
                         ignoring: true,
                         child: Checkbox(
-                          materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                          materialTapTargetSize:
+                              MaterialTapTargetSize.shrinkWrap,
                           visualDensity: VisualDensity.compact,
                           value: create.save,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(4),
                           ),
-                          fillColor: MaterialStateProperty.all(AppColors.greenLight),
+                          fillColor:
+                              MaterialStateProperty.all(AppColors.greenLight),
                           onChanged: (v) {},
                         ),
                       ),
@@ -150,7 +154,8 @@ class _SearchNisPageState extends State<SearchNisPage> {
                 child: Container(
                   padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
-                      color: AppColors.greenLight, borderRadius: BorderRadius.circular(16)),
+                      color: AppColors.greenLight,
+                      borderRadius: BorderRadius.circular(16)),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -266,7 +271,8 @@ class _SearchNisPageState extends State<SearchNisPage> {
                     imageUrl:
                         'https://ldcapps.com/wp-content/uploads/2022/11/mulher-segurando-cartao-auxilio-brasil.jpg',
                     placeholder: (context, url) => const Loading(),
-                    errorWidget: (context, url, error) => const Icon(Icons.error),
+                    errorWidget: (context, url, error) =>
+                        const Icon(Icons.error),
                     fit: BoxFit.fill,
                   ),
                 )),
@@ -316,7 +322,8 @@ class _SearchNisPageState extends State<SearchNisPage> {
             decoration: const BoxDecoration(
               color: AppColors.greenLight,
               borderRadius: BorderRadius.only(
-                  bottomRight: Radius.circular(16), bottomLeft: Radius.circular(16)),
+                  bottomRight: Radius.circular(16),
+                  bottomLeft: Radius.circular(16)),
             ),
             child: Row(
               children: [
@@ -330,7 +337,8 @@ class _SearchNisPageState extends State<SearchNisPage> {
                   width: 36,
                   height: 36,
                   decoration: BoxDecoration(
-                      color: AppColors.greenDark, borderRadius: BorderRadius.circular(4)),
+                      color: AppColors.greenDark,
+                      borderRadius: BorderRadius.circular(4)),
                   child: const Icon(
                     Icons.arrow_forward_ios_outlined,
                     color: AppColors.greenLight,

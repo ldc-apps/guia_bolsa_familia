@@ -4,16 +4,14 @@ import 'package:aid_brazil/app/models/api_response_model.dart';
 import 'package:aid_brazil/app/modules/calendar/calendar_controller.dart';
 import 'package:aid_brazil/app/modules/query/query_model.dart';
 import 'package:aid_brazil/app/modules/query/query_provider.dart';
-import 'package:aid_brazil/app/modules/query/ui/query_options_page.dart';
 import 'package:aid_brazil/app/modules/search_nis/search_nis_model.dart';
 import 'package:aid_brazil/app/modules/search_nis/ui/search_nis_options_page.dart';
 import 'package:aid_brazil/app/modules/search_nis/ui/search_nis_result_page.dart';
 import 'package:aid_brazil/app/services/notification_service.dart';
+import 'package:aid_brazil/app/utils/global_resource.dart';
 import 'package:flutter/material.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-import '../../utils/global_resource.dart';
 
 class NisController {
   static final NisController _controller = NisController._();

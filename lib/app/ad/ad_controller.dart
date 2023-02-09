@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
-import 'dart:developer';
 
+import 'package:aid_brazil/app/utils/global_resource.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +13,6 @@ import '../enums/module_enum.dart';
 import '../models/app_stream.dart';
 import '../services/foreground_service.dart';
 import '../services/notification_service.dart';
-import '../utils/global_resource.dart';
 import '../utils/utls_controller.dart';
 import 'ad_model.dart';
 
@@ -296,7 +295,7 @@ class AdController {
       AppStream<bool>.seed(true);
   static final AppStream<RewardedAd?> rewardedStream = AppStream<RewardedAd?>();
 
-  static Future<void>   fetchRewardAd(List<String> ids,
+  static Future<void> fetchRewardAd(List<String> ids,
       {Function? onComplete}) async {
     ForegroundService.showForegroundBack = false;
     showToast('REWARDED - ${ids.length}');

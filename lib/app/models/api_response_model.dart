@@ -1,4 +1,3 @@
-
 class ApiResponse<T> {
   late T data;
   late RequestError error;

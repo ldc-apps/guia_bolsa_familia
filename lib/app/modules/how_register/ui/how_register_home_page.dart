@@ -16,8 +16,8 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 import '../../../components/privacy_policy.dart';
 
-class HowRegisterHomePage extends StatefulWidget {
-  const HowRegisterHomePage({super.key});
+class HowRegisterHomePage extends JourneyStatefulWidget {
+  const HowRegisterHomePage({super.key}) : super(name: 'HowRegisterHomePage');
 
   @override
   State<HowRegisterHomePage> createState() => _HowRegisterHomePageState();

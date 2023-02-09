@@ -2,10 +2,11 @@ import 'package:aid_brazil/app/ad/ad_controller.dart';
 import 'package:aid_brazil/app/components/app_scaffold.dart';
 import 'package:aid_brazil/app/components/h.dart';
 import 'package:aid_brazil/app/utils/app_colors.dart';
+import 'package:aid_brazil/app/utils/global_resource.dart';
 import 'package:flutter/material.dart';
 
-class QuizLoadingPage extends StatefulWidget {
-  const QuizLoadingPage({Key? key}) : super(key: key);
+class QuizLoadingPage extends JourneyStatefulWidget {
+  const QuizLoadingPage({Key? key}) : super(key: key, name: 'QuizLoadingPage');
 
   @override
   State<QuizLoadingPage> createState() => _QuizLoadingPageState();
@@ -20,7 +21,8 @@ class _QuizLoadingPageState extends State<QuizLoadingPage> {
 
   Future<void> initMethod() async {
     await Future.delayed(const Duration(seconds: 3));
-    await AdController.checkAndshowQueryAd(onComplete: () => Navigator.pop(context));
+    await AdController.checkAndshowQueryAd(
+        onComplete: () => Navigator.pop(context));
   }
 
   @override

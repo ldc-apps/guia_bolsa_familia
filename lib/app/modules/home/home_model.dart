@@ -24,7 +24,7 @@ class HomeItem {
         HomeItem(
           'Central de\nAtendimento',
           Icons.headset_mic_outlined,
-          () => push(_, const AttendanceHomePage()),
+          () => push(_,  AttendanceHomePage()),
           action: Icons.arrow_forward_ios_outlined,
         ),
         HomeItem(
@@ -33,8 +33,8 @@ class HomeItem {
           () async {
             await AdController.showInterstitialAd(
               _,
-              onComplete: () => execUrl(
-                  'https://www.caixa.gov.br/atendimento/paginas/encontre-a-caixa.aspx'),
+              onComplete: () =>
+                  execUrl('https://www.caixa.gov.br/atendimento/paginas/encontre-a-caixa.aspx'),
               pop: false,
             );
           },

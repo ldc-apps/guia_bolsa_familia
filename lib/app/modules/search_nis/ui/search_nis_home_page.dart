@@ -17,8 +17,8 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 import '../../../components/privacy_policy.dart';
 
-class SearchNisHomePage extends StatefulWidget {
-  const SearchNisHomePage({super.key});
+class SearchNisHomePage extends JourneyStatefulWidget {
+  const SearchNisHomePage({super.key}) : super(name: 'SearchNisHomePage');
 
   @override
   State<SearchNisHomePage> createState() => _SearchNisHomePageState();
@@ -65,7 +65,7 @@ class _SearchNisHomePageState extends State<SearchNisHomePage> {
                   padding: EdgeInsets.symmetric(horizontal: 20),
                   child: PageTitle(
                       'Consultar seu NIS', 'Veja formas de consultar seu NIS')),
-                      const H(32),
+              const H(32),
               InkWell(
                 onTap: () => push(context, const SearchNisPage()),
                 child: Container(

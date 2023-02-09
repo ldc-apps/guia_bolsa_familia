@@ -14,8 +14,8 @@ import 'package:aid_brazil/app/utils/global_resource.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
-class DoubtsPage extends StatefulWidget {
-  const DoubtsPage({Key? key}) : super(key: key);
+class DoubtsPage extends JourneyStatefulWidget {
+  const DoubtsPage({Key? key}) : super(key: key, name: 'DoubtsPage');
 
   @override
   State<DoubtsPage> createState() => _DoubtsPageState();

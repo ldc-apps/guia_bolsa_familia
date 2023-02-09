@@ -11,16 +11,18 @@ import 'package:aid_brazil/app/components/w.dart';
 import 'package:aid_brazil/app/modules/home/home_model.dart';
 import 'package:aid_brazil/app/utils/app_colors.dart';
 import 'package:aid_brazil/app/utils/app_theme.dart';
+import 'package:aid_brazil/app/utils/global_resource.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 import '../../../ad/ad_controller.dart';
 
-class SearchNisOptionsPage extends StatefulWidget {
+class SearchNisOptionsPage extends JourneyStatefulWidget {
   final String title;
   final String subTitle;
 
-  const SearchNisOptionsPage(this.title, this.subTitle, {Key? key}) : super(key: key);
+  const SearchNisOptionsPage(this.title, this.subTitle, {Key? key})
+      : super(key: key, name: 'SearchNisOptionsPage') ;
 
   @override
   State<SearchNisOptionsPage> createState() => _SearchNisOptionsPageState();
@@ -65,12 +67,14 @@ class _SearchNisOptionsPageState extends State<SearchNisOptionsPage> {
                   children: [
                     Text(
                       'Ops... 😇',
-                      style: AppTheme.title.copyWith(color: AppColors.white, fontSize: 32),
+                      style: AppTheme.title
+                          .copyWith(color: AppColors.white, fontSize: 32),
                     ),
                     const H(8),
                     Text(
                       'Não encontramos suas informações em nossa base da dados. Confira abaixo, alternativas para consultar seu NIS.',
-                      style: AppTheme.subtitle.copyWith(color: Colors.grey[400]),
+                      style:
+                          AppTheme.subtitle.copyWith(color: Colors.grey[400]),
                     ),
                   ],
                 ),
@@ -98,10 +102,12 @@ class _SearchNisOptionsPageState extends State<SearchNisOptionsPage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const ModuleTitle('Canais de', 'Atendimento', boldBottom: true),
+                    const ModuleTitle('Canais de', 'Atendimento',
+                        boldBottom: true),
                     const H(24),
                     const Divisor(),
-                    for (var e in HomeItem.bottomItens(_)) _bottomHomeItem(context, e),
+                    for (var e in HomeItem.bottomItens(_))
+                      _bottomHomeItem(context, e),
                     const H(24),
                     Row(
                       children: [
@@ -210,13 +216,16 @@ class _SearchNisOptionsPageState extends State<SearchNisOptionsPage> {
                     child: Text(
                   item.label,
                   style: const TextStyle(
-                      color: AppColors.greenDark, fontSize: 20, fontWeight: FontWeight.w500),
+                      color: AppColors.greenDark,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w500),
                 )),
                 Container(
                   width: 40,
                   height: 40,
-                  decoration:
-                      BoxDecoration(color: AppColors.green, borderRadius: BorderRadius.circular(4)),
+                  decoration: BoxDecoration(
+                      color: AppColors.green,
+                      borderRadius: BorderRadius.circular(4)),
                   child: Icon(
                     item.action,
                     color: AppColors.white,

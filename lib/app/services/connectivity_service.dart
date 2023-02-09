@@ -5,14 +5,15 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:rxdart/rxdart.dart';
 
 class ConnectivyService {
-
   static final Connectivity _connectivity = Connectivity();
 
   static final BehaviorSubject<bool> connectionController =
       BehaviorSubject<bool>();
   static Sink<bool> get inResult => connectionController.sink;
   static Stream<bool> get outResult => connectionController.stream;
-  static bool get hasConnection => connectionController.stream.hasValue ? connectionController.stream.value : false;
+  static bool get hasConnection => connectionController.stream.hasValue
+      ? connectionController.stream.value
+      : false;
 
   static Future<void> init() async {
     inResult.add(await getConnectiviy);

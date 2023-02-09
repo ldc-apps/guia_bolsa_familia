@@ -11,12 +11,12 @@ import 'package:aid_brazil/app/components/w.dart';
 import 'package:aid_brazil/app/modules/quiz/ui/quiz_home_page.dart';
 import 'package:aid_brazil/app/utils/app_colors.dart';
 import 'package:aid_brazil/app/utils/app_theme.dart';
-import 'package:aid_brazil/app/utils/global_resources.dart';
+import 'package:aid_brazil/app/utils/global_resource.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
-class HowWorkWhatValuesPaidPage extends StatefulWidget {
-  const HowWorkWhatValuesPaidPage({super.key});
+class HowWorkWhatValuesPaidPage extends JourneyStatefulWidget {
+  const HowWorkWhatValuesPaidPage({super.key}) : super(name: 'HowWorkWhatValuesPaidPage');
 
   @override
   State<HowWorkWhatValuesPaidPage> createState() =>

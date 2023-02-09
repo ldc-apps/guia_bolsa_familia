@@ -3,12 +3,13 @@ import 'package:aid_brazil/app/components/back.dart';
 import 'package:aid_brazil/app/components/background_gradient.dart';
 import 'package:aid_brazil/app/modules/new/new_model.dart';
 import 'package:aid_brazil/app/utils/app_colors.dart';
+import 'package:aid_brazil/app/utils/global_resource.dart';
 import 'package:flutter/material.dart';
 
-class NewPage extends StatefulWidget {
+class NewPage extends JourneyStatefulWidget {
   final New work;
 
-  const NewPage(this.work, {Key? key}) : super(key: key);
+  const NewPage(this.work, {Key? key}) : super(key: key, name: 'NewPage');
 
   @override
   State<NewPage> createState() => _NewPageState();

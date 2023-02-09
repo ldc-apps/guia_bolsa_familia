@@ -4,13 +4,12 @@ import 'package:aid_brazil/app/ad/ad_controller.dart';
 import 'package:aid_brazil/app/services/foreground_service.dart';
 import 'package:aid_brazil/app/utils/app_colors.dart';
 import 'package:aid_brazil/app/utils/app_theme.dart';
+import 'package:aid_brazil/app/utils/global_resource.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:overlay_support/overlay_support.dart';
-
-import '../utils/global_resource.dart';
 
 class NotificationService {
   static void negative(String label,

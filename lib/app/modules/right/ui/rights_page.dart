@@ -6,13 +6,14 @@ import 'package:aid_brazil/app/components/background_gradient.dart';
 import 'package:aid_brazil/app/components/h.dart';
 import 'package:aid_brazil/app/modules/right/right_model.dart';
 import 'package:aid_brazil/app/utils/app_colors.dart';
+import 'package:aid_brazil/app/utils/global_resource.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 import '../../../ad/ad_controller.dart';
 
-class RightsPage extends StatefulWidget {
-  const RightsPage({Key? key}) : super(key: key);
+class RightsPage extends JourneyStatefulWidget {
+  const RightsPage({Key? key}) : super(key: key, name: 'RightsPage');
 
   @override
   State<RightsPage> createState() => _RightsPageState();

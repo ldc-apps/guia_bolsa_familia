@@ -18,8 +18,8 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 import '../../../components/privacy_policy.dart';
 
-class LoanHomePage extends StatefulWidget {
-  const LoanHomePage({super.key});
+class LoanHomePage extends JourneyStatefulWidget {
+  const LoanHomePage({super.key}) : super(name: 'LoanHomePage');
 
   @override
   State<LoanHomePage> createState() => _LoanHomePageState();

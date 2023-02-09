@@ -18,8 +18,8 @@ class NewController {
 
   Future<void> init() async {
     try {
-      final response = await get(
-          Uri.parse('https://news.google.com/rss/search?q=aux%C3%ADlio%20brasil&hl=pt-BR&gl=BR&ceid=BR%3Apt-419'));
+      final response = await get(Uri.parse(
+          'https://news.google.com/rss/search?q=aux%C3%ADlio%20brasil&hl=pt-BR&gl=BR&ceid=BR%3Apt-419'));
       var rssFeed = RssFeed.parse(response.body);
       List<New> news = [];
       for (var item in rssFeed.items!) {

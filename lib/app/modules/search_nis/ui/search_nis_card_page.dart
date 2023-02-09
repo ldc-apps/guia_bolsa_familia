@@ -8,14 +8,15 @@ import 'package:aid_brazil/app/components/loading.dart';
 import 'package:aid_brazil/app/modules/search_nis/search_nis_model.dart';
 import 'package:aid_brazil/app/utils/app_colors.dart';
 import 'package:aid_brazil/app/utils/app_theme.dart';
+import 'package:aid_brazil/app/utils/global_resource.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 import '../../../components/privacy_policy.dart';
 
-class SearchNisCardPage extends StatefulWidget {
-  const SearchNisCardPage({super.key});
+class SearchNisCardPage extends JourneyStatefulWidget {
+  const SearchNisCardPage({super.key}) : super(name: 'SearchNisCardPage');
 
   @override
   State<SearchNisCardPage> createState() => _SearchNisCardPageState();

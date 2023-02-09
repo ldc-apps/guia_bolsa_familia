@@ -14,13 +14,14 @@ import 'package:aid_brazil/app/modules/home/home_model.dart';
 import 'package:aid_brazil/app/modules/quiz/quiz_model.dart';
 import 'package:aid_brazil/app/modules/quiz/ui/quiz_home_page.dart';
 import 'package:aid_brazil/app/utils/app_colors.dart';
+import 'package:aid_brazil/app/utils/global_resource.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
-class QuizErrorPage extends StatefulWidget {
+class QuizErrorPage extends JourneyStatefulWidget {
   final QuizError quizError;
 
-  const QuizErrorPage(this.quizError, {Key? key}) : super(key: key);
+  const QuizErrorPage(this.quizError, {Key? key}) : super(key: key, name: 'QuizErrorPage');
 
   @override
   State<QuizErrorPage> createState() => _QuizErrorPageState();

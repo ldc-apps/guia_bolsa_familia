@@ -63,7 +63,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '796318567664',
     projectId: 'ldc-aid-brazil',
     storageBucket: 'ldc-aid-brazil.appspot.com',
-    iosClientId: '796318567664-2poonvhf184qk34efahmda24p62lflgo.apps.googleusercontent.com',
+    iosClientId:
+        '796318567664-2poonvhf184qk34efahmda24p62lflgo.apps.googleusercontent.com',
     iosBundleId: 'com.example.aidBrazil',
   );
 }

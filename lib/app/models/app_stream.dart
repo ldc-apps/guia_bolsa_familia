@@ -1,19 +1,17 @@
 import 'package:rxdart/rxdart.dart';
 
-class AppStream<T>{
+class AppStream<T> {
   late final T t;
-  AppStream(){
-     controller = BehaviorSubject<T>();
+  AppStream() {
+    controller = BehaviorSubject<T>();
   }
 
-  AppStream.seed(this.t){
-     controller = BehaviorSubject<T>.seeded(t);
+  AppStream.seed(this.t) {
+    controller = BehaviorSubject<T>.seeded(t);
   }
 
   late final BehaviorSubject<T> controller;
   void add(e) => controller.sink.add(e);
   Stream<T> get listen => controller.stream;
   T get value => controller.stream.value;
-
-  
 }

@@ -20,8 +20,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
-class CalendarSelectNisPage extends StatefulWidget {
-  const CalendarSelectNisPage({Key? key}) : super(key: key);
+class CalendarSelectNisPage extends JourneyStatefulWidget {
+  const CalendarSelectNisPage({Key? key}) : super(key: key, name: 'CalendarSelectNisPage');
 
   @override
   State<CalendarSelectNisPage> createState() => _CalendarSelectNisPageState();

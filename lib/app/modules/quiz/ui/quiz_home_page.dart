@@ -1,3 +1,4 @@
+import 'package:aid_brazil/app/utils/global_resource.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
@@ -15,13 +16,12 @@ import '../../../components/privacy_policy.dart';
 import '../../../components/quiz_loading_page.dart';
 import '../../../components/w.dart';
 import '../../../utils/app_colors.dart';
-import '../../../utils/global_resource.dart';
 import '../../home/home_model.dart';
 import '../../query/query_controller.dart';
 import '../quiz_model.dart';
 
-class QuizHomePage extends StatefulWidget {
-  const QuizHomePage({Key? key}) : super(key: key);
+class QuizHomePage extends JourneyStatefulWidget {
+  const QuizHomePage({Key? key}) : super(key: key, name: 'QuizHomePage');
 
   @override
   State<QuizHomePage> createState() => _QuizHomePageState();

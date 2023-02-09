@@ -10,11 +10,12 @@ import 'package:aid_brazil/app/components/privacy_policy.dart';
 import 'package:aid_brazil/app/components/w.dart';
 import 'package:aid_brazil/app/modules/home/home_model.dart';
 import 'package:aid_brazil/app/utils/app_colors.dart';
+import 'package:aid_brazil/app/utils/global_resource.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class ExitPage extends StatefulWidget {
-  const ExitPage({Key? key}) : super(key: key);
+class ExitPage extends JourneyStatefulWidget {
+  const ExitPage({Key? key}) : super(key: key, name: 'ExitPage');
 
   @override
   State<ExitPage> createState() => _ExitPageState();

@@ -15,8 +15,8 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 import '../../../components/privacy_policy.dart';
 
-class SearchNisCpfPage extends StatefulWidget {
-  const SearchNisCpfPage({super.key});
+class SearchNisCpfPage extends JourneyStatefulWidget {
+  const SearchNisCpfPage({super.key}) : super(name: 'SearchNisCpfPage');
 
   @override
   State<SearchNisCpfPage> createState() => _SearchNisCpfPageState();

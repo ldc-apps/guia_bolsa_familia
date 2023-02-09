@@ -58,27 +58,27 @@ class HowRegisterItem {
         HowRegisterItem(
           'Veja se você tem direito',
           'Confira as regras para receber o Bolsa Família',
-          const HowRegisterRightPage(),
+           HowRegisterRightPage(),
         ),
         HowRegisterItem(
           'Documentos\nNecessários',
           'Veja os documentos para receber o Bolsa Família',
-          const HowRegisterDocPage(),
+           HowRegisterDocPage(),
         ),
         HowRegisterItem(
           'Cadastro no CadÚnico',
           'Veja como se Cadastrar ou Atualizar o CadÚnico',
-          const HowRegisterCadunicoPage(),
+           HowRegisterCadunicoPage(),
         ),
         HowRegisterItem(
           'Aprovação no Bolsa Família',
           'Como saber se você foi aprovado no Bolsa Família',
-          const HowRegisterAprovacaoPage(),
+           HowRegisterAprovacaoPage(),
         ),
         HowRegisterItem(
           'Recebe seu Bolsa Família',
           'Saiba como receber seu Bolsa Família',
-          const HowRegisterReceivePage(),
+           HowRegisterReceivePage(),
         ),
       ];
 }

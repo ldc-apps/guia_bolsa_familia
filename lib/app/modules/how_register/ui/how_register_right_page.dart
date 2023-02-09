@@ -11,13 +11,14 @@ import 'package:aid_brazil/app/components/w.dart';
 import 'package:aid_brazil/app/modules/how_register/how_register_model.dart';
 import 'package:aid_brazil/app/utils/app_colors.dart';
 import 'package:aid_brazil/app/utils/app_theme.dart';
+import 'package:aid_brazil/app/utils/global_resource.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 import '../../../components/privacy_policy.dart';
 
-class HowRegisterRightPage extends StatefulWidget {
-  const HowRegisterRightPage({super.key});
+class HowRegisterRightPage extends JourneyStatefulWidget {
+  const HowRegisterRightPage({super.key}) : super(name: 'HowRegisterRightPage');
 
   @override
   State<HowRegisterRightPage> createState() => _HowRegisterRightPageState();

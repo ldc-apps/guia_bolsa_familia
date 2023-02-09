@@ -15,8 +15,8 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 import '../../../ad/ad_controller.dart';
 
-class HowWorkHomePage extends StatefulWidget {
-  const HowWorkHomePage({Key? key}) : super(key: key);
+class HowWorkHomePage extends JourneyStatefulWidget {
+  const HowWorkHomePage({Key? key}) : super(key: key, name: 'HowWorkHomePage');
 
   @override
   State<HowWorkHomePage> createState() => _HowWorkHomePageState();

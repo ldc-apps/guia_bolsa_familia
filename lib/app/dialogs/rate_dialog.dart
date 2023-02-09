@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:aid_brazil/app/utils/global_resource.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -8,7 +9,6 @@ import '../components/button.dart';
 import '../components/h.dart';
 import '../components/w.dart';
 import '../utils/app_colors.dart';
-import '../utils/global_resource.dart';
 
 class RateDialog extends StatefulWidget {
   const RateDialog({Key? key}) : super(key: key);

@@ -1,4 +1,5 @@
 import 'package:aid_brazil/app/ad/ad_controller.dart';
+import 'package:aid_brazil/app/utils/global_resource.dart';
 import 'package:flutter/material.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -6,7 +7,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../components/query_loading_page.dart';
 import '../../models/api_response_model.dart';
 import '../../services/notification_service.dart';
-import '../../utils/global_resource.dart';
 import '../calendar/calendar_controller.dart';
 import 'query_model.dart';
 import 'query_provider.dart';

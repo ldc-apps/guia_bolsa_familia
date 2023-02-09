@@ -1,15 +1,18 @@
-enum AdTypeEnum{
+enum AdTypeEnum {
   reward,
   intersticialReward,
   none,
 }
 
-extension AdTypeEnumParse on String{
-  AdTypeEnum toAdTypeEnum(){
+extension AdTypeEnumParse on String {
+  AdTypeEnum toAdTypeEnum() {
     switch (this) {
-      case 'reward': return AdTypeEnum.reward;
-      case 'intersticial': return AdTypeEnum.intersticialReward;
-      default: return AdTypeEnum.none;
+      case 'reward':
+        return AdTypeEnum.reward;
+      case 'intersticial':
+        return AdTypeEnum.intersticialReward;
+      default:
+        return AdTypeEnum.none;
     }
   }
 }

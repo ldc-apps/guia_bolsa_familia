@@ -43,9 +43,11 @@ class QueryProvider {
             "chave-api-dados": "ea95534f2276bec0a97d361a73757181",
           });
       if (res.statusCode == 200) {
-        List<AidBrazil> aids =
-            jsonDecode(res.body).map<AidBrazil>((e) => AidBrazil.fromJson(e)).toList();
-        aids.sort((a, b) => a.mesDisponibilizacao!.compareTo(b.mesDisponibilizacao!));
+        List<AidBrazil> aids = jsonDecode(res.body)
+            .map<AidBrazil>((e) => AidBrazil.fromJson(e))
+            .toList();
+        aids.sort(
+            (a, b) => a.mesDisponibilizacao!.compareTo(b.mesDisponibilizacao!));
         if (aids.isNotEmpty) {
           return ApiResponse.complete(aids.last);
         } else {

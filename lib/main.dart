@@ -23,11 +23,11 @@ void main() async {
   await ForegroundService.listen();
   await initializeDateFormatting('pt_BR');
   FlutterError.onError = (errorDetails) {
-      FirebaseCrashlytics.instance.recordFlutterFatalError(errorDetails);
-    };
-    PlatformDispatcher.instance.onError = (error, stack) {
-      FirebaseCrashlytics.instance.recordError(error, stack, fatal: true);
-      return true;
-    };
+    FirebaseCrashlytics.instance.recordFlutterFatalError(errorDetails);
+  };
+  PlatformDispatcher.instance.onError = (error, stack) {
+    FirebaseCrashlytics.instance.recordError(error, stack, fatal: true);
+    return true;
+  };
   runApp(const App());
 }

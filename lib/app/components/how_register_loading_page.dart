@@ -1,10 +1,11 @@
 import 'package:aid_brazil/app/components/app_scaffold.dart';
 import 'package:aid_brazil/app/components/h.dart';
 import 'package:aid_brazil/app/utils/app_colors.dart';
+import 'package:aid_brazil/app/utils/global_resource.dart';
 import 'package:flutter/material.dart';
 
-class HowRegisterLoadingPage extends StatefulWidget {
-  const HowRegisterLoadingPage({Key? key}) : super(key: key);
+class HowRegisterLoadingPage extends JourneyStatefulWidget {
+  const HowRegisterLoadingPage({Key? key}) : super(key: key, name: 'HowRegisterLoadingPage');
 
   @override
   State<HowRegisterLoadingPage> createState() => _HowRegisterLoadingPageState();

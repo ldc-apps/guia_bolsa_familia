@@ -18,5 +18,3 @@ class BannerLoading extends StatelessWidget {
     );
   }
 }
-
-

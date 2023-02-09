@@ -19,8 +19,8 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 import '../../../components/back.dart';
 import '../../../components/background_gradient.dart';
 
-class QuizSuccessPage extends StatefulWidget {
-  const QuizSuccessPage({Key? key}) : super(key: key);
+class QuizSuccessPage extends JourneyStatefulWidget {
+  const QuizSuccessPage({Key? key}) : super(key: key, name: 'QuizSuccessPage');
 
   @override
   State<QuizSuccessPage> createState() => _QuizSuccessPageState();

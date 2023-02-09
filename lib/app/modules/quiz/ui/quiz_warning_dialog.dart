@@ -1,10 +1,10 @@
 import 'package:aid_brazil/app/components/h.dart';
+import 'package:aid_brazil/app/components/loading.dart';
 import 'package:aid_brazil/app/modules/quiz/quiz_model.dart';
 import 'package:aid_brazil/app/utils/app_colors.dart';
 import 'package:aid_brazil/app/utils/app_theme.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:aid_brazil/app/components/loading.dart';
 
 class QuizWarningDialog extends StatelessWidget {
   final QuizWarning warning;

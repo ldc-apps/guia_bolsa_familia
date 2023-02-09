@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
 class AppShimmer extends StatelessWidget {
-
   final Widget child;
 
   const AppShimmer({Key? key, required this.child}) : super(key: key);
@@ -10,11 +9,11 @@ class AppShimmer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IgnorePointer(
-            ignoring: true,
-            child: Shimmer.fromColors(
-                baseColor: Colors.grey[300]!,
-                highlightColor: Colors.grey[100]!,
-                child: child),
-          );
+      ignoring: true,
+      child: Shimmer.fromColors(
+          baseColor: Colors.grey[300]!,
+          highlightColor: Colors.grey[100]!,
+          child: child),
+    );
   }
 }

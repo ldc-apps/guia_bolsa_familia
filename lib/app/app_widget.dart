@@ -31,7 +31,8 @@ class _AppState extends State<App> {
       }
     });
     NewController().init();
-    AdController.fetchBanner(AdController.adConfig.banner.id, AdController.adBannerStorage);
+    AdController.fetchBanner(
+        AdController.adConfig.banner.id, AdController.adBannerStorage);
   }
 
   @override

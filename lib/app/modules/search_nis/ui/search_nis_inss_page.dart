@@ -15,8 +15,8 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 import '../../../components/privacy_policy.dart';
 
-class SearchNisInssPage extends StatefulWidget {
-  const SearchNisInssPage({super.key});
+class SearchNisInssPage extends JourneyStatefulWidget {
+  const SearchNisInssPage({super.key}) : super(name: 'SearchNisInssPage');
 
   @override
   State<SearchNisInssPage> createState() => _SearchNisInssPageState();

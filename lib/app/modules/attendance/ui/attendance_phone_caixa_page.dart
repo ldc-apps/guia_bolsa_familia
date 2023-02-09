@@ -1,3 +1,4 @@
+import 'package:aid_brazil/app/utils/global_resource.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:url_launcher/url_launcher_string.dart';
@@ -17,11 +18,10 @@ import '../../../components/privacy_policy.dart';
 import '../../../components/w.dart';
 import '../../../utils/app_colors.dart';
 import '../../../utils/app_theme.dart';
-import '../../../utils/global_resource.dart';
 import '../../home/home_model.dart';
 
-class AttendancePhoneCaixaPage extends StatefulWidget {
-  const AttendancePhoneCaixaPage({super.key});
+class AttendancePhoneCaixaPage extends JourneyStatefulWidget {
+  const AttendancePhoneCaixaPage({super.key}) : super(name: 'AttendancePhoneCaixaPage');
 
   @override
   State<AttendancePhoneCaixaPage> createState() =>
@@ -213,7 +213,7 @@ class _AttendancePhoneCaixaPageState extends State<AttendancePhoneCaixaPage> {
                   width: 40,
                   height: 40,
                   decoration: BoxDecoration(
-                      color: Color(0xFFE45200),
+                      color: const Color(0xFFE45200),
                       borderRadius: BorderRadius.circular(4)),
                   child: Icon(
                     item.action,

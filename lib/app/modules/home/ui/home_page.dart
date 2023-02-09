@@ -1,4 +1,5 @@
 import 'package:aid_brazil/app/components/exit_page.dart';
+import 'package:aid_brazil/app/utils/global_resource.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -15,12 +16,11 @@ import '../../../components/privacy_policy.dart';
 import '../../../components/w.dart';
 import '../../../dialogs/rate_dialog.dart';
 import '../../../utils/app_colors.dart';
-import '../../../utils/global_resource.dart';
 import '../../query/ui/query_search_page.dart';
 import '../home_model.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class HomePage extends JourneyStatefulWidget {
+  const HomePage({Key? key}) : super(key: key, name: 'HomePage');
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -36,6 +36,7 @@ class _HomePageState extends State<HomePage> {
     );
     super.initState();
   }
+
   String get _getTitleByHour {
     final now = DateTime.now();
 
@@ -73,7 +74,6 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-
 
   Widget _body(_) {
     final homeItens = HomeItem.itens(_);

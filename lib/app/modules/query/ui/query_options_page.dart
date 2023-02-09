@@ -1,3 +1,4 @@
+import 'package:aid_brazil/app/utils/global_resource.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
@@ -16,12 +17,12 @@ import '../../../utils/app_colors.dart';
 import '../../../utils/app_theme.dart';
 import '../../home/home_model.dart';
 
-class QueryOptionsPage extends StatefulWidget {
+class QueryOptionsPage extends JourneyStatefulWidget {
   final String title;
   final String subTitle;
 
   const QueryOptionsPage(this.title, this.subTitle, {Key? key})
-      : super(key: key);
+      : super(key: key, name: 'QueryOptionsPage');
 
   @override
   State<QueryOptionsPage> createState() => _QueryOptionsPageState();

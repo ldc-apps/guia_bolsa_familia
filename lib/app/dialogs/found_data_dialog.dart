@@ -1,14 +1,5 @@
 // import 'dart:ui';
 
-// import 'package:aid_brazil/app/ad/ad_controller.dart';
-// import 'package:aid_brazil/app/ad/ad_model.dart';
-// import 'package:aid_brazil/app/components/h.dart';
-// import 'package:aid_brazil/app/components/stream_out.dart';
-// import 'package:aid_brazil/app/components/w.dart';
-// import 'package:aid_brazil/app/utils/app_colors.dart';
-// import 'package:aid_brazil/app/utils/global_resource.dart';
-// import 'package:flutter/material.dart';
-
 // import '../components/button.dart';
 
 // class FoundDataDialog extends StatefulWidget {

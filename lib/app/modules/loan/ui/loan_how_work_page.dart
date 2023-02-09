@@ -1,3 +1,4 @@
+import 'package:aid_brazil/app/utils/global_resource.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
@@ -13,8 +14,8 @@ import '../../../components/w.dart';
 import '../../../utils/app_colors.dart';
 import '../../../utils/app_theme.dart';
 
-class LoanHowWorkPage extends StatefulWidget {
-  const LoanHowWorkPage({super.key});
+class LoanHowWorkPage extends JourneyStatefulWidget {
+  const LoanHowWorkPage({super.key}) : super(name: 'LoanHowWorkPage');
 
   @override
   State<LoanHowWorkPage> createState() => _LoanHowWorkPageState();

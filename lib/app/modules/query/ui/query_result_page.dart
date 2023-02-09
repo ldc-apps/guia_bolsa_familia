@@ -1,3 +1,4 @@
+import 'package:aid_brazil/app/utils/global_resource.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:intl/intl.dart';
@@ -18,10 +19,10 @@ import '../../../utils/app_theme.dart';
 import '../../home/home_model.dart';
 import '../query_model.dart';
 
-class QueryResultPage extends StatefulWidget {
+class QueryResultPage extends JourneyStatefulWidget {
   final QueryResult query;
 
-  const QueryResultPage(this.query, {Key? key}) : super(key: key);
+  const QueryResultPage(this.query, {Key? key}) : super(key: key, name: 'QueryResultPage');
 
   @override
   State<QueryResultPage> createState() => _QueryResultPageState();

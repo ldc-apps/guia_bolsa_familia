@@ -17,10 +17,10 @@ class ModulePage extends StatelessWidget {
       child: (_, ignoring) => IgnorePointer(
         ignoring: ignoring,
         child: StreamOut(
-            stream: _utilsController.moduleStream.listen,
-            child: (_, module) => 
-            module == Module.home ? const HomePage() : const SplashPage(),
-            ),
+          stream: _utilsController.moduleStream.listen,
+          child: (_, module) =>
+              module == Module.home ? const HomePage() : const SplashPage(),
+        ),
       ),
     );
   }

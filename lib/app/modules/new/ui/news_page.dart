@@ -18,8 +18,8 @@ import 'package:intl/intl.dart';
 
 import '../../../ad/ad_controller.dart';
 
-class NewsPage extends StatefulWidget {
-  const NewsPage({Key? key}) : super(key: key);
+class NewsPage extends JourneyStatefulWidget {
+  const NewsPage({Key? key}) : super(key: key, name: 'NewsPage');
 
   @override
   State<NewsPage> createState() => _NewsPageState();
