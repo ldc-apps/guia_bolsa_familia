@@ -276,7 +276,7 @@ class _CalendarSelectNisPageState extends State<CalendarSelectNisPage> {
         push(
             _,
             CalendarPaymentDay(value, days, day,
-                [1, 2, 3, 4, 5, 6].contains(day.month) ? 1 : 2));
+                [1, 2, 3, 4, 5, 6].contains(day.month) ? 0 : 1));
       },
       child: Container(
         decoration: BoxDecoration(

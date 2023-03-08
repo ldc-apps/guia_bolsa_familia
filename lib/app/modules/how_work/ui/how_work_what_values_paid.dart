@@ -19,8 +19,7 @@ class HowWorkWhatValuesPaidPage extends JourneyStatefulWidget {
   const HowWorkWhatValuesPaidPage({super.key}) : super(name: 'HowWorkWhatValuesPaidPage');
 
   @override
-  State<HowWorkWhatValuesPaidPage> createState() =>
-      _HowWorkWhaValuesPaidsPageState();
+  State<HowWorkWhatValuesPaidPage> createState() => _HowWorkWhaValuesPaidsPageState();
 }
 
 class _HowWorkWhaValuesPaidsPageState extends State<HowWorkWhatValuesPaidPage> {
@@ -107,15 +106,9 @@ class _HowWorkWhaValuesPaidsPageState extends State<HowWorkWhatValuesPaidPage> {
                   ),
                   const H(16),
                   Text(
-                    '​Esses são os valores do Bolsa Família.',
+                    'Famílias elegíveis irão migrar automaticamente do Auxílio Brasil para o Bolsa Família, sem necessidade de realizar novo cadastro.\n\nO novo Bolsa Família começa a ser pago pela Caixa Econômica Federal a partir do dia 20 de março. O programa, que substitui o Auxílio Brasil, foi lançado na quinta-feira (2) pelo presidente Luiz Inácio Lula da Silva (PT), e atende famílias em situação de pobreza ou extrema pobreza.\n\nO benefício será de, no mínimo, R\$ 600 por família. O programa ainda conta com novos acréscimos: são mais R\$ 150 por criança de até seis anos e, a partir de junho, um adicional de R\$ 50 por integrante entre 7 e 18 anos incompletos e mulheres gestantes cadastradas na família.',
                     style: AppTheme.subtitle,
                   ),
-                  _divisor(),
-                  ...[
-                    'O valor normal do Bolsa Família é de R\$ 600 até o final do ano. Mas existem alguns outros benefícios complementares que permitem aumentar esse valor.',
-                    'Alguns exemplos são famílias com crianças de até três anos, com mulheres grávidas ou lactantes, estudantes com bolsa de iniciação científica ou de esporte escolar, por exemplo.',
-                    'Juntando todos os benefícios disponíveis, é possível receber até R\$ 1.220 por mês, se a família estiver dentro dos requisitos necessários.',
-                  ].map((e) => labelItem(Icons.check, e)).toList(),
                   const H(16),
                   Text(
                     'Benefícios',
@@ -134,10 +127,6 @@ class _HowWorkWhaValuesPaidsPageState extends State<HowWorkWhatValuesPaidPage> {
                   _cardReceive3(),
                   const H(16),
                   _cardReceive4(),
-                  const H(16),
-                  _cardReceive5(),
-                  const H(16),
-                  _cardReceive6(),
                   const H(32),
                   Text(
                     'Dá para receber todos os benefícios propostos no Bolsa Família?',
@@ -145,20 +134,10 @@ class _HowWorkWhaValuesPaidsPageState extends State<HowWorkWhatValuesPaidPage> {
                   ),
                   const H(16),
                   Text(
-                    'O Ministério da Cidadania informou que a família pode receber todos os benefícios propostos pelo programa Bolsa Família, desde que preencha os pré-requisitos para receber.\n\nCaso a família preencha os requisitos para todos os benefícios, o valor total fica em R\$ 1.220 mensais (considerando que tenha pelo menos uma criança de até três anos e uma grávida, lactante ou pessoa entre três e 21 anos incompletos).\n\nÉ importante buscar um CRAS mais próximo de você para fazer parte de cada benefício do Bolsa Família, e também para saber se tem direito e quais benefícios tem direito receber.',
+                    'O Ministério da Cidadania informou que a família pode receber todos os benefícios propostos pelo programa Bolsa Família, desde que preencha os pré-requisitos para receber.\n\nÉ importante buscar um CRAS mais próximo de você para fazer parte de cada benefício do Bolsa Família, e também para saber se tem direito e quais benefícios tem direito receber.',
                     style: AppTheme.subtitle,
                   ),
-                  const H(32),
-                  Text(
-                    'Participe!',
-                    style: AppTheme.title,
-                  ),
-                  const H(16),
-                  Text(
-                    'Para saber se você tem direito ao Bolsa Família, participe do questionário do Bolsa Família.',
-                    style: AppTheme.subtitle,
-                  ),
-                  const H(32),
+                  const H(64),
                   const PrivacyPolicy(),
                   const H(96),
                 ],
@@ -187,12 +166,12 @@ class _HowWorkWhaValuesPaidsPageState extends State<HowWorkWhatValuesPaidPage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'BPI (Benefício Primeira Infância):',
+            'Benefício de Renda de Cidadania:',
             style: AppTheme.title,
           ),
           _divisor(),
           Text(
-            'A família recebe mais R\$ 130 por criança de até três anos incompletos.',
+            'Pago para todos os integrantes da família, no valor de R\$ 142 por pessoa.',
             style: AppTheme.subtitle,
           ),
         ],
@@ -212,12 +191,12 @@ class _HowWorkWhaValuesPaidsPageState extends State<HowWorkWhatValuesPaidPage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'BCF (Benefício de Composição Familiar)',
+            'Benefício Complementar:',
             style: AppTheme.title,
           ),
           _divisor(),
           Text(
-            'O governo paga R\$ 65 a mais por pessoa se a família tiver gestantes, lactantes e/ou pessoas com idade entre três e 21 anos incompletos.\n\nAs lactantes recebem seis parcelas do benefício e as pessoas entre 18 e 21 anos incompletos precisam estar matriculadas na escola ou ter concluído a educação básica para ter direito ao benefício.',
+            'pago às famílias beneficiárias do Programa Bolsa Família, caso o Benefício de Renda de Cidadania não seja o suficiente para alcançar o valor mínimo de R\$600 por família. O complemento é calculado para garantir que nenhuma família receba menos que o valor de R\$ 600;',
             style: AppTheme.subtitle,
           ),
         ],
@@ -237,12 +216,12 @@ class _HowWorkWhaValuesPaidsPageState extends State<HowWorkWhatValuesPaidPage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'BComp (Benefício Compensatório de Transição)',
+            'Benefício Primeira Infância:',
             style: AppTheme.title,
           ),
           _divisor(),
           Text(
-            'Esse benefício é pago para as famílias que recebiam um valor maior de Bolsa Família e, com a mudança do programa para o Bolsa Família, passou a receber menos dinheiro.\n\nO valor desse benefício pode variar dependendo da família.',
+            'no valor de R\$ 150 por criança com idade entre 0 (zero) e 6 anos;',
             style: AppTheme.subtitle,
           ),
         ],
@@ -262,107 +241,12 @@ class _HowWorkWhaValuesPaidsPageState extends State<HowWorkWhatValuesPaidPage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Bolsa de Iniciação Científica Júnior',
+            'Benefício Variável Familiar:',
             style: AppTheme.title,
           ),
           _divisor(),
           Text(
-            'Oque é?',
-            style: AppTheme.subtitle.copyWith(fontWeight: FontWeight.bold),
-          ),
-          const H(16),
-          Text(
-            'Benefício pago para estudantes integrantes de famílias beneficiárias do Bolsa Família que tenham se destacado em competições acadêmicas e científicas nacionais.',
-            style: AppTheme.subtitle,
-          ),
-          const H(16),
-          Text(
-            'Valor?',
-            style: AppTheme.subtitle.copyWith(fontWeight: FontWeight.bold),
-          ),
-          const H(16),
-          Text(
-            '12 parcelas de R\$ 100 pagas ao estudante mais R\$ 1.000 pago em parcela única à família.',
-            style: AppTheme.subtitle,
-          ),
-        ],
-      ),
-    );
-  }
-
-  Container _cardReceive5() {
-    return Container(
-      width: double.maxFinite,
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
-        color: const Color(0xFFe6eaec),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            'Bolsa Família Inclusão Produtiva Rural',
-            style: AppTheme.title,
-          ),
-          _divisor(),
-          Text(
-            'Oque é?',
-            style: AppTheme.subtitle.copyWith(fontWeight: FontWeight.bold),
-          ),
-          const H(16),
-          Text(
-            'O benefício é pago para pessoas que vivem em zona rural em extrema vulnerabilidade, sem condições financeiras de investir em pequenas produções.',
-            style: AppTheme.subtitle,
-          ),
-          const H(16),
-          Text(
-            'Valor?',
-            style: AppTheme.subtitle.copyWith(fontWeight: FontWeight.bold),
-          ),
-          const H(16),
-          Text(
-            'São pagas parcelas mensais de R\$ 200 e só é autorizado um por família.',
-            style: AppTheme.subtitle,
-          ),
-        ],
-      ),
-    );
-  }
-
-  Container _cardReceive6() {
-    return Container(
-      width: double.maxFinite,
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
-        color: const Color(0xFFe6eaec),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            'Bolsa Família Esporte Escolar',
-            style: AppTheme.title,
-          ),
-          _divisor(),
-          Text(
-            'Oque é?',
-            style: AppTheme.subtitle.copyWith(fontWeight: FontWeight.bold),
-          ),
-          const H(16),
-          Text(
-            'Benefício pago a atletas escolares que tenham entre 12 e 17 anos incompletos.',
-            style: AppTheme.subtitle,
-          ),
-          const H(16),
-          Text(
-            'Valor?',
-            style: AppTheme.subtitle.copyWith(fontWeight: FontWeight.bold),
-          ),
-          const H(16),
-          Text(
-            '12 parcelas de R\$ 100 pagas ao estudante mais R\$ 1.000 pago em parcela única à família.',
+            'Pago às famílias que tenham em sua composição gestantes e/ou crianças, com idade entre 7 (sete) e 12 (doze) anos incompletos e/ou adolescentes, com idade entre 12 (doze) e 18 (dezoito) anos incompletos; no valor de R\$ 50 por pessoa que atenda estes critérios.',
             style: AppTheme.subtitle,
           ),
         ],

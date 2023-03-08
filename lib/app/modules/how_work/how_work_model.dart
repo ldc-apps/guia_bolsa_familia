@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'ui/how_work_available_for.dart';
 import 'ui/how_work_benefit_page.dart';
 import 'ui/how_work_how_get.dart';
-import 'ui/how_work_what_is_page.dart';
+import 'ui/how_work_how_work_page.dart';
 import 'ui/how_work_what_values_paid.dart';
 
 class HowWorkHome {
@@ -17,7 +17,7 @@ class HowWorkHome {
         HowWorkHome(
           'O\'Que é o Bolsa Família',
           'Veja o\'que é e como funciona.',
-          const HowWorkWhatIsPage(),
+          const HowWorkHowWorkPage(),
         ),
         HowWorkHome(
           'Quais valores são pagos',

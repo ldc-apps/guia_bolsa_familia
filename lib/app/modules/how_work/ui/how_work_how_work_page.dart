@@ -16,14 +16,14 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 import '../../../components/privacy_policy.dart';
 
-class HowWorkWhatIsPage extends JourneyStatefulWidget {
-  const HowWorkWhatIsPage({super.key}) : super(name: 'HowWorkWhatIsPage');
+class HowWorkHowWorkPage extends JourneyStatefulWidget {
+  const HowWorkHowWorkPage({super.key}) : super(name: 'HowWorkHowWorkPage');
 
   @override
-  State<HowWorkWhatIsPage> createState() => _HowWorkWhatIsPageState();
+  State<HowWorkHowWorkPage> createState() => _HowWorkHowWorkPageState();
 }
 
-class _HowWorkWhatIsPageState extends State<HowWorkWhatIsPage> {
+class _HowWorkHowWorkPageState extends State<HowWorkHowWorkPage> {
   BannerAd? banner;
 
   @override
@@ -32,7 +32,7 @@ class _HowWorkWhatIsPageState extends State<HowWorkWhatIsPage> {
       onWillPop: () async => await AdController.showInterstitialAd(context),
       child: AppScaffold(
         active: AdController.adConfig.banner.active,
-        behavior: AdBannerStorage.howWorkWhatIsStream,
+        behavior: AdBannerStorage.howWorkHowWorkStream,
         body: _body(context),
       ),
     );
@@ -42,7 +42,7 @@ class _HowWorkWhatIsPageState extends State<HowWorkWhatIsPage> {
   void initState() {
     AdController.fetchBanner(
       AdController.adConfig.banner.id,
-      AdBannerStorage.howWorkWhatIsStream,
+      AdBannerStorage.howWorkHowWorkStream,
     );
     super.initState();
   }
@@ -94,7 +94,7 @@ class _HowWorkWhatIsPageState extends State<HowWorkWhatIsPage> {
                         fontWeight: FontWeight.bold,
                       )),
                   const H(32),
-                  AppBannerAd(AdBannerStorage.howWorkWhatIsStream),
+                  AppBannerAd(AdBannerStorage.howWorkHowWorkStream),
                   const H(32),
                   Text(
                     'Entenda',

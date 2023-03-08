@@ -138,3 +138,6 @@ abstract class JourneyStatefulWidget extends StatefulWidget {
     return StatefulElement(this);
   }
 }
+
+String urlImage =
+    'https://img.freepik.com/fotos-premium/sinal-de-trabalho-em-andamento-amarelo-com-listras_698953-677.jpg?w=2000';

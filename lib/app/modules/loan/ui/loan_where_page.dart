@@ -105,10 +105,6 @@ class _LoanWherePageState extends State<LoanWherePage> {
               ...[
                 'Os valores emprestados serão depositados pelo banco na mesma conta onde são feitos os pagamentos do Bolsa Família, em até dois dias úteis após a contratação do empréstimo.'
               ].map((e) => labelItem(e)).toList(),
-              Text(
-                'Estando dentro dessas condições você poderá fazer o empréstimo',
-                style: AppTheme.subtitle,
-              ),
               const H(48),
               const PrivacyPolicy(),
               const H(16),

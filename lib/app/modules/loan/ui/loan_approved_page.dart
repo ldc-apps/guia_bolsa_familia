@@ -15,7 +15,7 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 import '../../../components/privacy_policy.dart';
 
 class LoanApprovedPage extends JourneyStatefulWidget {
-  const LoanApprovedPage({super.key}) : super(name: 'LoanApprovedPage');
+  const  LoanApprovedPage({super.key}) : super(name: 'LoanApprovedPage');
 
   @override
   State<LoanApprovedPage> createState() => _LoanApprovedPageState();
@@ -89,10 +89,6 @@ class _LoanApprovedPageState extends State<LoanApprovedPage> {
                 'Caso ocorra algum erro ou falha na operação, o usuário poderá contatar a Caixa através dos telefones 121 ou 111. Além disso, é possível ir até uma agência do banco para tirar as dúvidas',
                 'Você pode ir até uma agência da caixa e verificar seu pedido, tendo em mãos os seguintes documentos RG e CPF originais',
               ].map((e) => labelItem(e)).toList(),
-              Text(
-                'Estando dentro dessas condições você poderá fazer o empréstimo',
-                style: AppTheme.subtitle,
-              ),
               const H(48),
               const PrivacyPolicy(),
               const H(16),

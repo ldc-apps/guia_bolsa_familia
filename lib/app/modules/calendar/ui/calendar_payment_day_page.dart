@@ -25,8 +25,7 @@ class CalendarPaymentDay extends StatefulWidget {
   final DateTime day;
   final int currentSemester;
 
-  const CalendarPaymentDay(this.nis, this.days, this.day, this.currentSemester,
-      {Key? key})
+  const CalendarPaymentDay(this.nis, this.days, this.day, this.currentSemester, {Key? key})
       : super(key: key);
 
   @override
@@ -79,8 +78,7 @@ class _CalendarPaymentDayState extends State<CalendarPaymentDay> {
                   children: [
                     Text(
                       'Próximo pagamento',
-                      style:
-                          AppTheme.subtitle.copyWith(color: Colors.grey[400]),
+                      style: AppTheme.subtitle.copyWith(color: Colors.grey[400]),
                     ),
                     const H(8),
                     Text(
@@ -96,16 +94,13 @@ class _CalendarPaymentDayState extends State<CalendarPaymentDay> {
                       text: TextSpan(children: [
                         TextSpan(
                             text: 'Faltam ',
-                            style: AppTheme.subtitle
-                                .copyWith(color: Colors.grey[400])),
+                            style: AppTheme.subtitle.copyWith(color: Colors.grey[400])),
                         TextSpan(
                             text: getDaysOut(),
-                            style: AppTheme.subtitle
-                                .copyWith(color: Colors.yellow)),
+                            style: AppTheme.subtitle.copyWith(color: Colors.yellow)),
                         TextSpan(
                             text: ' dias para receber!',
-                            style: AppTheme.subtitle
-                                .copyWith(color: Colors.grey[400])),
+                            style: AppTheme.subtitle.copyWith(color: Colors.grey[400])),
                       ]),
                     ),
                   ],
@@ -134,47 +129,41 @@ class _CalendarPaymentDayState extends State<CalendarPaymentDay> {
               Row(
                 children: [
                   IgnorePointer(
-                    ignoring: currentSemester == 1,
+                    ignoring: currentSemester == 0,
                     child: InkWell(
                       onTap: () {
-                        if (currentSemester == 2) {
+                        if (currentSemester == 1) {
                           _pageController.previousPage(
-                              duration: const Duration(milliseconds: 300),
-                              curve: Curves.ease);
+                              duration: const Duration(milliseconds: 300), curve: Curves.ease);
                         }
                       },
                       child: Icon(
                         Icons.arrow_circle_left_outlined,
                         size: 32,
-                        color: currentSemester == 2
-                            ? AppColors.greenDark
-                            : AppColors.white,
+                        color: currentSemester == 1 ? AppColors.greenDark : AppColors.white,
                       ),
                     ),
                   ),
                   Expanded(
                     child: Center(
                         child: Text(
-                      '$currentSemesterº Semestre',
+                      '${currentSemester + 1}º Semestre',
                       style: AppTheme.subtitle.copyWith(fontSize: 24),
                     )),
                   ),
                   IgnorePointer(
-                    ignoring: currentSemester == 2,
+                    ignoring: currentSemester == 1,
                     child: InkWell(
                       onTap: () {
-                        if (currentSemester == 1) {
+                        if (currentSemester == 0) {
                           _pageController.nextPage(
-                              duration: const Duration(milliseconds: 300),
-                              curve: Curves.ease);
+                              duration: const Duration(milliseconds: 300), curve: Curves.ease);
                         }
                       },
                       child: Icon(
                         Icons.arrow_circle_right_outlined,
                         size: 32,
-                        color: currentSemester == 1
-                            ? AppColors.greenDark
-                            : AppColors.white,
+                        color: currentSemester == 0 ? AppColors.greenDark : AppColors.white,
                       ),
                     ),
                   ),
@@ -187,15 +176,14 @@ class _CalendarPaymentDayState extends State<CalendarPaymentDay> {
                 child: PageView(
                   onPageChanged: (i) {
                     setState(() {
-                      currentSemester = i + 1;
+                      currentSemester = i;
                     });
                   },
                   controller: _pageController,
                   scrollDirection: Axis.horizontal,
                   children: [
                     _tablePayment(context, widget.days.getRange(0, 6).toList()),
-                    _tablePayment(
-                        context, widget.days.getRange(6, 12).toList()),
+                    _tablePayment(context, widget.days.getRange(6, 12).toList()),
                   ],
                 ),
               ),
@@ -208,9 +196,7 @@ class _CalendarPaymentDayState extends State<CalendarPaymentDay> {
                     height: 20,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: currentSemester == 1
-                          ? AppColors.greenDark
-                          : const Color(0xFFd9d9d9),
+                      color: currentSemester == 0 ? AppColors.greenDark : const Color(0xFFd9d9d9),
                       boxShadow: currentSemester == 1 ? AppTheme.shadow : null,
                     ),
                   ),
@@ -220,9 +206,7 @@ class _CalendarPaymentDayState extends State<CalendarPaymentDay> {
                     height: 20,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: currentSemester == 2
-                          ? AppColors.greenDark
-                          : const Color(0xFFd9d9d9),
+                      color: currentSemester == 1 ? AppColors.greenDark : const Color(0xFFd9d9d9),
                       boxShadow: currentSemester == 2 ? AppTheme.shadow : null,
                     ),
                   ),
@@ -328,10 +312,7 @@ class _CalendarPaymentDayState extends State<CalendarPaymentDay> {
 
   String getDaysOut() {
     final now = DateTime.now();
-    final out = widget.day
-        .difference(DateTime(now.year, now.month, now.day))
-        .inDays
-        .toString();
+    final out = widget.day.difference(DateTime(now.year, now.month, now.day)).inDays.toString();
     return out == '0' ? 'Hoje' : out;
   }
 
@@ -356,14 +337,9 @@ class _CalendarPaymentDayState extends State<CalendarPaymentDay> {
     final bool inPast = date.month < widget.day.month;
     return Container(
       decoration: BoxDecoration(
-        color: inPast
-            ? const Color(0xFFf7f7f7)
-            : (current ? AppColors.greenDark : AppColors.white),
+        color: inPast ? const Color(0xFFf7f7f7) : (current ? AppColors.greenDark : AppColors.white),
         border: Border.all(
-            color: !inPast || current
-                ? AppColors.greenDark
-                : const Color(0xFFf7f7f7),
-            width: 1),
+            color: !inPast || current ? AppColors.greenDark : const Color(0xFFf7f7f7), width: 1),
         borderRadius: BorderRadius.circular(24),
       ),
       child: Column(

@@ -40,13 +40,13 @@ class Avantage {
       title: 'Inclusão Produtiva Rural',
       subtitle: empty,
       description:
-          'Benefício pago em parcelas mensais de R\$ 200 a famílias atendidas pelo Programa Bolsa Família que possuam em sua composição agricultores familiares. A comprovação de enquadramento como agricultor familiar ocorrerá pela Declaração de Aptidão ao Programa Nacional de Fortalecimento da Agricultura Familiar. Não é permitido o pagamento de mais de um Bolsa Família por pessoa e por família.',
+          'Benefício pago em parcelas mensais de R\$ 218 a famílias atendidas pelo Programa Bolsa Família que possuam em sua composição agricultores familiares. A comprovação de enquadramento como agricultor familiar ocorrerá pela Declaração de Aptidão ao Programa Nacional de Fortalecimento da Agricultura Familiar. Não é permitido o pagamento de mais de um Bolsa Família por pessoa e por família.',
     ),
     Avantage(
       title: 'Inclusão Produtiva Urbana',
       subtitle: empty,
       description:
-          'Benefício de R\$ 200 por mês pago a beneficiários do Bolsa Família que comprovarem vínculo de emprego com carteira assinada. O recebimento é limitado a um Bolsa Família por família ou por pessoa.',
+          'Benefício de R\$ 218 por mês pago a beneficiários do Bolsa Família que comprovarem vínculo de emprego com carteira assinada. O recebimento é limitado a um Bolsa Família por família ou por pessoa.',
     ),
     Avantage(
       title: 'Benefício Compensatório de Transição (BComp)',

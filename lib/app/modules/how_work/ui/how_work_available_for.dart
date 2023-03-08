@@ -113,7 +113,7 @@ class _HowWorkAvailableForState extends State<HowWorkAvailableFor> {
                   _divisor(),
                   ...[
                     'Podem participar do Programa as famílias em situação de pobreza ou extrema pobreza que tenham, em sua composição, gestantes, nutrizes (mães que amamentam), crianças, adolescentes e jovens entre 0 e 21 anos incompletos.',
-                    'As famílias extremamente pobres são aquelas que têm renda familiar por pessoa mensal igual ou inferior a R\$ 105,00 (cento e cinco reais). As famílias pobres são aquelas que têm renda familiar por pessoa de R\$ 105,01 (cento e cinco reais e um centavo) e R\$ 210,00 (duzentos e dez reais).',
+                    'As famílias extremamente pobres são aquelas que têm renda familiar por pessoa mensal igual ou inferior a R\$ 105,00 (cento e cinco reais). As famílias pobres são aquelas que têm renda familiar por pessoa de R\$ 105,01 (cento e cinco reais e um centavo) e R\$ 218,00 (duzentos e dezoito reais).',
                     'Para se candidatar ao Programa é necessário que a família esteja inscrita no Cadastro Único para Programas Sociais do Governo Federal e tenha atualizado seus dados cadastrais nos últimos 2 anos.',
                     'Caso atenda aos requisitos de renda e não esteja inscrito, procure o responsável pelo Programa Bolsa Família na prefeitura de sua cidade para realizar o cadastramento no Cadastro Único.',
                     'Mantenha seus dados sempre atualizados, informando à prefeitura qualquer mudança de endereço, telefone de contato e composição da sua família, como: nascimento, morte, casamento, separação e adoção.',

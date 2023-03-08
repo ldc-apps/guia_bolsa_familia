@@ -38,11 +38,11 @@ class DoubtHowRegisterItem {
         ),
         DoubtHowRegisterItem(
           'O que é necessário para se inscrever no Bolsa Família?',
-          'São famílias com renda familiar mensal por pessoa entre R\$ 105,01 e R\$ 210,00 (cento e cinco reais e um centavo e duzentos e dez reais).',
+          'São famílias com renda familiar mensal por pessoa entre R\$ 105,01 e R\$ 218,00 (cento e cinco reais e um centavo e duzentos e dezoito reais).',
         ),
         DoubtHowRegisterItem(
           'O que são famílias em regra de emancipação?',
-          'São famílias cujo beneficiário consegue um emprego formal e a renda ultrapassa a linha de pobreza (R\$ 210 por pessoa). Este poderá continuar recebendo o Bolsa Família por até dois anos, desde que a renda familiar mensal não ultrapasse R\$ 252 por pessoa.',
+          'São famílias cujo beneficiário consegue um emprego formal e a renda ultrapassa a linha de pobreza (R\$ 218 por pessoa). Este poderá continuar recebendo o Bolsa Família por até dois anos, desde que a renda familiar mensal não ultrapasse R\$ 252 por pessoa.',
         ),
       ];
 }
@@ -58,62 +58,57 @@ class HowRegisterItem {
         HowRegisterItem(
           'Veja se você tem direito',
           'Confira as regras para receber o Bolsa Família',
-           HowRegisterRightPage(),
+          const HowRegisterRightPage(),
         ),
         HowRegisterItem(
           'Documentos\nNecessários',
           'Veja os documentos para receber o Bolsa Família',
-           HowRegisterDocPage(),
+          const HowRegisterDocPage(),
         ),
         HowRegisterItem(
           'Cadastro no CadÚnico',
           'Veja como se Cadastrar ou Atualizar o CadÚnico',
-           HowRegisterCadunicoPage(),
+          const HowRegisterCadunicoPage(),
         ),
         HowRegisterItem(
           'Aprovação no Bolsa Família',
           'Como saber se você foi aprovado no Bolsa Família',
-           HowRegisterAprovacaoPage(),
+          const HowRegisterAprovacaoPage(),
         ),
         HowRegisterItem(
           'Recebe seu Bolsa Família',
           'Saiba como receber seu Bolsa Família',
-           HowRegisterReceivePage(),
+          const HowRegisterReceivePage(),
         ),
       ];
 }
 
 class SearchNisStep {
   static List<SearchNisStep> get itensCPF => [
-        SearchNisStep(1,
-            'Acesse o site CNIS (Cadastro Nacional de Informações Sociais);'),
+        SearchNisStep(1, 'Acesse o site CNIS (Cadastro Nacional de Informações Sociais);'),
         SearchNisStep(2, 'Selecione a opção "Cidadão";',
             url: 'https://miro.medium.com/max/640/0*i1v1In2Tn4Stnwnl.jpg'),
         SearchNisStep(3,
             'No canto superior direito, toque no “MENU”, após isso clique em “Inscrição”, e por fim clique em “Filiado”;',
             url: 'https://miro.medium.com/max/640/0*i1v1In2Tn4Stnwnl.jpg'),
-        SearchNisStep(4,
-            'Preencha todos os campos solicitados, incluindo o número do CPF;',
+        SearchNisStep(4, 'Preencha todos os campos solicitados, incluindo o número do CPF;',
             url: 'https://miro.medium.com/max/640/0*i1v1In2Tn4Stnwnl.jpg'),
-        SearchNisStep(
-            5, 'Uma mensagem com a informação do seu número NIT/PIS aparecerá.',
+        SearchNisStep(5, 'Uma mensagem com a informação do seu número NIT/PIS aparecerá.',
             url: 'https://miro.medium.com/max/640/0*i1v1In2Tn4Stnwnl.jpg'),
       ];
   static List<SearchNisStep> get itensNIS => [
         SearchNisStep(1, 'Acesse o site oficial Meu INSS;'),
         SearchNisStep(2, 'Em seguida, entre com o seu login e senha;',
             url: 'https://miro.medium.com/max/640/0*i1v1In2Tn4Stnwnl.jpg'),
-        SearchNisStep(3,
-            'Caso não possua cadastro, clique em “Entrar” e preencha seus dados cadastrais;',
+        SearchNisStep(
+            3, 'Caso não possua cadastro, clique em “Entrar” e preencha seus dados cadastrais;',
+            url: 'https://miro.medium.com/max/640/0*i1v1In2Tn4Stnwnl.jpg'),
+        SearchNisStep(4, 'Após o preenchimento, autorize o uso dos seus dados pessoais;',
+            url: 'https://miro.medium.com/max/640/0*i1v1In2Tn4Stnwnl.jpg'),
+        SearchNisStep(5, 'Confirme seus dados respondendo algumas perguntas feitas pelo sistema;',
             url: 'https://miro.medium.com/max/640/0*i1v1In2Tn4Stnwnl.jpg'),
         SearchNisStep(
-            4, 'Após o preenchimento, autorize o uso dos seus dados pessoais;',
-            url: 'https://miro.medium.com/max/640/0*i1v1In2Tn4Stnwnl.jpg'),
-        SearchNisStep(5,
-            'Confirme seus dados respondendo algumas perguntas feitas pelo sistema;',
-            url: 'https://miro.medium.com/max/640/0*i1v1In2Tn4Stnwnl.jpg'),
-        SearchNisStep(6,
-            'Faça login novamente e acesse a opção “Meu Cadastro”, no canto superior esquerdo;',
+            6, 'Faça login novamente e acesse a opção “Meu Cadastro”, no canto superior esquerdo;',
             url: 'https://miro.medium.com/max/640/0*i1v1In2Tn4Stnwnl.jpg'),
         SearchNisStep(7,
             'E pronto! Nessa opção, você encontra os seus dados cadastrados, incluindo o número do NIS.',

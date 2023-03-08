@@ -33,10 +33,8 @@ class AdController {
       // final adConfig = AdConfig.fromJson(AdConfig.configDefault);
       // adConfigStream.add(adConfig);
       // ------
-      await remoteConfig.setDefaults({
-        'ad_config': jsonEncode(AdConfig.configDefault),
-        'query_enable': true
-      });
+      await remoteConfig
+          .setDefaults({'ad_config': jsonEncode(AdConfig.configDefault), 'query_enable': true});
       await remoteConfig.fetchAndActivate();
       final enable = remoteConfig.getBool('query_enable');
       queryEnableStream.add(enable);
@@ -52,11 +50,9 @@ class AdController {
 
   //* Intersticial
 
-  static final AppStream<InterstitialAd?> interstitialStream =
-      AppStream<InterstitialAd?>();
+  static final AppStream<InterstitialAd?> interstitialStream = AppStream<InterstitialAd?>();
 
-  static Future<void> fetchInterstitialAd(List<String> ids,
-      {bool fromNotification = false}) async {
+  static Future<void> fetchInterstitialAd(List<String> ids, {bool fromNotification = false}) async {
     if (ids.length == adConfig.intersticial.id.length && _canShowIntersticial) {
       return;
     }
@@ -67,8 +63,7 @@ class AdController {
         adLoadCallback: InterstitialAdLoadCallback(
           onAdLoaded: (InterstitialAd ad) {
             showToastLoaded('INTERSTICIAL - ${ids.length}');
-            ad.fullScreenContentCallback =
-                _intersticialFullScreenCallback(fromNotification);
+            ad.fullScreenContentCallback = _intersticialFullScreenCallback(fromNotification);
             interstitialStream.add(ad);
           },
           onAdFailedToLoad: (LoadAdError error) {
@@ -86,15 +81,14 @@ class AdController {
         ));
   }
 
-  static FullScreenContentCallback<InterstitialAd>
-      _intersticialFullScreenCallback(bool fromNotification) =>
-          FullScreenContentCallback(
-            onAdDismissedFullScreenContent: (InterstitialAd ad) =>
-                _disposeIntersticial(ad, fromNotification),
-            onAdFailedToShowFullScreenContent:
-                (InterstitialAd ad, AdError error) =>
-                    _disposeIntersticial(ad, fromNotification),
-          );
+  static FullScreenContentCallback<InterstitialAd> _intersticialFullScreenCallback(
+          bool fromNotification) =>
+      FullScreenContentCallback(
+        onAdDismissedFullScreenContent: (InterstitialAd ad) =>
+            _disposeIntersticial(ad, fromNotification),
+        onAdFailedToShowFullScreenContent: (InterstitialAd ad, AdError error) =>
+            _disposeIntersticial(ad, fromNotification),
+      );
 
   static void _disposeIntersticial(InterstitialAd ad, bool fromNotification) {
     ad.dispose();
@@ -110,8 +104,7 @@ class AdController {
       UtilsController().ignoringStream.add(true);
       await interstitialStream.controller.value!.show();
       late StreamSubscription<InterstitialAd?> controller;
-      controller = AdController.interstitialStream.controller
-          .listen((InterstitialAd? data) {
+      controller = AdController.interstitialStream.controller.listen((InterstitialAd? data) {
         if (data == null) {
           controller.cancel();
           if (pop) Navigator.pop(context);
@@ -132,8 +125,7 @@ class AdController {
       interstitialStream.controller.hasValue &&
       interstitialStream.controller.value != null;
 
-  static Future<void> showInsterticialAdNotification(
-      List<String> ids, String url) async {
+  static Future<void> showInsterticialAdNotification(List<String> ids, String url) async {
     ForegroundService.showForegroundBack = false;
     if (AdController.adConfig.intersticial.active) {
       push(contextGlobal, const SplashPage());
@@ -141,8 +133,7 @@ class AdController {
     AdController.fetchInterstitialAd(ids,
         fromNotification: AdController.adConfig.intersticial.active);
     late StreamSubscription<InterstitialAd?> controller;
-    controller = AdController.interstitialStream.controller
-        .listen((InterstitialAd? data) {
+    controller = AdController.interstitialStream.controller.listen((InterstitialAd? data) {
       if (data != null) {
         data.show();
       } else {
@@ -161,8 +152,7 @@ class AdController {
 
   //* OPENED APP
 
-  static Future<void> fetchOpenedAppAd(List<String> ids,
-      {bool fromBackground = false}) async {
+  static Future<void> fetchOpenedAppAd(List<String> ids, {bool fromBackground = false}) async {
     showToast('OPENEDEDAPP - ${ids.length}');
     await AppOpenAd.load(
       adUnitId: ids.first,
@@ -171,8 +161,7 @@ class AdController {
       adLoadCallback: AppOpenAdLoadCallback(
         onAdLoaded: (ad) {
           showToastLoaded('OPENEDEDAPP - ${ids.length}');
-          ad.fullScreenContentCallback =
-              _openedApFullScreenCallback(fromBackground);
+          ad.fullScreenContentCallback = _openedApFullScreenCallback(fromBackground);
           ad.show();
         },
         onAdFailedToLoad: (error) {
@@ -213,20 +202,17 @@ class AdController {
         urlToShow = null;
       }
     } else {
-      handleInitialMessage(
-          await FirebaseMessaging.instance.getInitialMessage());
+      handleInitialMessage(await FirebaseMessaging.instance.getInitialMessage());
       ForegroundService.showForegroundBack = true;
     }
     UtilsController().moduleStream.add(Module.home);
   }
 
-  static BehaviorSubject<BannerAd?> adBannerStorage =
-      BehaviorSubject<BannerAd?>.seeded(null);
+  static BehaviorSubject<BannerAd?> adBannerStorage = BehaviorSubject<BannerAd?>.seeded(null);
 
   //* BANNER
 
-  static Future<void> fetchBanner(
-      List<String> ids, BehaviorSubject<BannerAd?> behavior,
+  static Future<void> fetchBanner(List<String> ids, BehaviorSubject<BannerAd?> behavior,
       {bool fromStorage = false}) async {
     if (AdController.adConfig.banner.active) {
       if (!fromStorage && adBannerStorage.value != null) {
@@ -235,8 +221,7 @@ class AdController {
         fetchBanner(ids, adBannerStorage, fromStorage: true);
         return;
       }
-      showToast(
-          'BANNER | ${fromStorage ? 'PROXIMA' : 'ATUAL'} | ${ids.length}');
+      showToast('BANNER | ${fromStorage ? 'PROXIMA' : 'ATUAL'} | ${ids.length}');
       await BannerAd(
         adUnitId: ids.first,
         request: const AdRequest(),
@@ -247,8 +232,7 @@ class AdController {
             if (!fromStorage && adBannerStorage.value == null) {
               fetchBanner(ids, adBannerStorage, fromStorage: true);
             }
-            showToastLoaded(
-                'BANNER | ${fromStorage ? 'PROXIMA' : 'ATUAL'} | ${ids.length}');
+            showToastLoaded('BANNER | ${fromStorage ? 'PROXIMA' : 'ATUAL'} | ${ids.length}');
           },
           onAdFailedToLoad: (ad, error) async {
             if (AdConfig.checkWaterFallErrorCode(error.code)) {
@@ -291,12 +275,10 @@ class AdController {
 
   //* REWARD
 
-  static final AppStream<bool> rewardedLoadingStream =
-      AppStream<bool>.seed(true);
+  static final AppStream<bool> rewardedLoadingStream = AppStream<bool>.seed(true);
   static final AppStream<RewardedAd?> rewardedStream = AppStream<RewardedAd?>();
 
-  static Future<void> fetchRewardAd(List<String> ids,
-      {Function? onComplete}) async {
+  static Future<void> fetchRewardAd(List<String> ids, {Function? onComplete}) async {
     ForegroundService.showForegroundBack = false;
     showToast('REWARDED - ${ids.length}');
     await RewardedAd.load(
@@ -328,8 +310,7 @@ class AdController {
 
   static final FullScreenContentCallback<RewardedAd> _rewardFullScreenCallback =
       FullScreenContentCallback(
-    onAdDismissedFullScreenContent: (RewardedAd ad) =>
-        _disposeRewardedAd(true, ad),
+    onAdDismissedFullScreenContent: (RewardedAd ad) => _disposeRewardedAd(true, ad),
     onAdFailedToShowFullScreenContent: (RewardedAd ad, AdError error) =>
         _disposeRewardedAd(true, ad),
   );
@@ -361,13 +342,11 @@ class AdController {
 
   //* INTERSTICIAL REWARD
 
-  static final AppStream<bool> rewardedIntersticialLoadingStream =
-      AppStream<bool>.seed(true);
+  static final AppStream<bool> rewardedIntersticialLoadingStream = AppStream<bool>.seed(true);
   static final AppStream<RewardedInterstitialAd?> rewardedIntersticialStream =
       AppStream<RewardedInterstitialAd?>();
 
-  static Future<void> fetchIntersticialRewardAd(List<String> ids,
-      {Function? onShow}) async {
+  static Future<void> fetchIntersticialRewardAd(List<String> ids, {Function? onShow}) async {
     ForegroundService.showForegroundBack = false;
     showToast("INTERSTICIAL REWARD - ${ids.length}");
     await RewardedInterstitialAd.load(
@@ -401,13 +380,11 @@ class AdController {
       _rewardIntersticialFullScreenCallback = FullScreenContentCallback(
     onAdDismissedFullScreenContent: (RewardedInterstitialAd ad) =>
         _disposeRewardedIntersticialAd(true, ad),
-    onAdFailedToShowFullScreenContent:
-        (RewardedInterstitialAd ad, AdError error) =>
-            _disposeRewardedIntersticialAd(true, ad),
+    onAdFailedToShowFullScreenContent: (RewardedInterstitialAd ad, AdError error) =>
+        _disposeRewardedIntersticialAd(true, ad),
   );
 
-  static void _disposeRewardedIntersticialAd(data,
-      [RewardedInterstitialAd? ad]) {
+  static void _disposeRewardedIntersticialAd(data, [RewardedInterstitialAd? ad]) {
     if (ad != null) {
       ad.dispose();
     }
@@ -432,8 +409,7 @@ class AdController {
     }
   }
 
-  static pushReplaceAndShowIntersticial(
-      BuildContext context, Widget page) async {
+  static pushReplaceAndShowIntersticial(BuildContext context, Widget page) async {
     await showInterstitialAd(context, onComplete: () {
       Navigator.of(context).popUntil((route) => route.isFirst);
       push(context, page);

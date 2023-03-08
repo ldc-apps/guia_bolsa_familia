@@ -83,7 +83,7 @@ class _LoanHowWorkPageState extends State<LoanHowWorkPage> {
                     margin: 0,
                   )),
               const H(32),
-              const Text('Como funciona o\nempréstimo do\nBolsa Família',
+              const Text('Como funciona o empréstimo do Bolsa Família',
                   style: TextStyle(
                     color: AppColors.greenDark,
                     fontSize: 34,
@@ -91,7 +91,7 @@ class _LoanHowWorkPageState extends State<LoanHowWorkPage> {
                   )),
               const H(16),
               Text(
-                  'O empréstimo Bolsa Família, também chamado de empréstimo consignado Bolsa Família ou apenas Consignado Bolsa Família, é um tipo de empréstimo consignado.',
+                  'O empréstimo Bolsa Família, também chamado de empréstimo consignado Bolsa Família ou apenas Consignado Auxílio, é um tipo de empréstimo consignado.',
                   style: AppTheme.subtitle),
               const H(32),
               AppBannerAd(AdBannerStorage.loanHowWorkStream),
@@ -102,15 +102,15 @@ class _LoanHowWorkPageState extends State<LoanHowWorkPage> {
               ),
               const H(16),
               Text(
-                'No empréstimo consignado, o pagamento das parcelas é descontado diretamente do valor do benefício. Ou seja, não é preciso sacar ou transferir o valor da parcela ao banco, pois a quantia é debitada automaticamente do recebimento do Bolsa Família ou do BPC.',
+                'No empréstimo consignado, o pagamento das parcelas é descontado diretamente do valor do benefício. Ou seja, não é preciso sacar ou transferir o valor da parcela ao banco, pois a quantia é debitada automaticamente do recebimento do auxílio ou do BPC.',
                 style: AppTheme.subtitle,
               ),
               _divisor(),
               ...[
-                'A portaria publicada no Diário Oficial União (DOU) estabelece que a margem do empréstimo será de 40% do valor mensal do benefício.',
+                'A portaria publicada no Diário Oficial União (DOU) estabelece que a margem do empréstimo será de 5% do valor mensal do benefício.',
                 'Importante: Quem desejar contratar o empréstimo Bolsa Família terá como base para cálculo o valor do benefício recebido.',
                 'As parcelas para pagamento do consignado Bolsa Família serão descontadas mensalmente do benefício, de acordo com o prazo do contrato.',
-                'O parcelamento pode ser feito em até 24 vezes.',
+                'O parcelamento pode ser feito em até 6 vezes.',
               ].map((e) => labelItem(e)).toList(),
               const H(32),
               const PrivacyPolicy(),

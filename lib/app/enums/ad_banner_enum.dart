@@ -12,11 +12,12 @@ enum AdBannerEnum {
   howRegisterHome,
   howRegisterReceive,
   howRegisterRight,
+  howWorkWhatIs,
   howWorkAvailable,
   howWorkBenefit,
   howWorkHome,
   howWorkHowGet,
-  howWorkWhatIsPage,
+  howWorkHowWorkPage,
   howWorkWhatValuesPaid,
   loanApproved,
   loanAsk,
@@ -43,4 +44,5 @@ enum AdBannerEnum {
   nisSearch,
   nisResult,
   nisOptions,
+  rules
 }

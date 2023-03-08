@@ -83,7 +83,7 @@ class _LoanRulesPageState extends State<LoanRulesPage> {
                     margin: 0,
                   )),
               const H(32),
-              const Text('Conheça as regras do\nEmpréstimo Bolsa Família',
+              const Text('Conheça as regras do Empréstimo Bolsa Família',
                   style: TextStyle(
                     color: AppColors.greenDark,
                     fontSize: 34,
@@ -98,16 +98,16 @@ class _LoanRulesPageState extends State<LoanRulesPage> {
               ),
               const H(16),
               Text(
-                'O valor do empréstimo pode comprometer no máximo 40% do valor mensal de recebimento do Bolsa Família.',
+                'O valor do empréstimo pode comprometer no 5% do valor mensal de recebimento do auxílio.',
                 style: AppTheme.subtitle,
               ),
               _divisor(),
               ...[
-                'O governo não poderá ser responsabilizado se o empréstimo não for pago ao banco',
-                'Valor do desconto mensal: na Caixa varia de R\$  15 a R\$ 160',
+                'Taxa de juros: não pode ser superior a 2,5% ao mês. ',
+                'Valor do desconto mensal: R\$ 30',
                 'Documentos exigidos: RG ou carteira de motorista e CPF',
-                'A prestação máxima é de R\$ 160, que corresponde a 40% do benefício permanente, de R\$ 400  (o valor original antes do pagamento adicional de R\$ 200, que termina em 31 de dezembro de 2023);',
-                'O empréstimo pode ser parcelado em até 24 meses',
+                'A prestação máxima é de R\$ 30, que corresponde a 5% do benefício permanente, de R\$ 600;',
+                'O empréstimo pode ser parcelado em até 6 meses',
                 'A parcela mínima é de R\$ 15, variando conforme o valor do crédito liberado',
               ].map((e) => labelItem(e)).toList(),
               Text(

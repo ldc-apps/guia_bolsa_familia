@@ -5,7 +5,7 @@ import '../../utils/global_resource.dart';
 class Right {
   static List<String> topics = [
     '''
-    Têm direito ao Bolsa Família as famílias em situação de pobreza (renda por pessoa de até R\$ 210 por mês) e extrema pobreza (renda por pessoa de até R\$ 105 por mês), que tiverem em sua composição gestantes ou pessoas com idade de até 21 anos incompletos, e que já fazem parte do Bolsa Família ou do Cadastro Único. O benefício chega hoje a 23% dos lares brasileiros.
+    Têm direito ao Bolsa Família as famílias em situação de pobreza (renda por pessoa de até R\$ 218 por mês) e extrema pobreza (renda por pessoa de até R\$ 105 por mês), que tiverem em sua composição gestantes ou pessoas com idade de até 21 anos incompletos, e que já fazem parte do Bolsa Família ou do Cadastro Único. O benefício chega hoje a 23% dos lares brasileiros.
     ''',
     '''
     Todas as famílias que já eram atendidas pelo Bolsa Família foram automaticamente migradas para o Bolsa Família. Já as famílias inscritas no Cadastro Único, e que não faziam parte do Bolsa Família, entrarão em uma lista de reserva, por enquanto.
@@ -21,10 +21,8 @@ class Right {
       description: empty,
     ),
     Right(
-      title:
-          'Famílias com gestantes ou com integrantes de três a 21 anos incompletos.',
-      subtitle:
-          'Integrantes de 18 a 21 anos precisam estar matriculados no ensino básico.',
+      title: 'Famílias com gestantes ou com integrantes de três a 21 anos incompletos.',
+      subtitle: 'Integrantes de 18 a 21 anos precisam estar matriculados no ensino básico.',
       description: empty,
     ),
     Right(
@@ -58,8 +56,7 @@ class Right {
     ),
     Right(
       title: 'Emprego formal',
-      subtitle:
-          'Beneficiários do Programa Bolsa Família que comprovarem vínculo de emprego formal',
+      subtitle: 'Beneficiários do Programa Bolsa Família que comprovarem vínculo de emprego formal',
       description: empty,
     ),
     Right(

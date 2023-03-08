@@ -3,96 +3,63 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:rxdart/rxdart.dart';
 
 class AdBannerStorage {
-  static BehaviorSubject<BannerAd?> attendanceHomeStream =
-      BehaviorSubject<BannerAd?>.seeded(null);
+  static BehaviorSubject<BannerAd?> attendanceHomeStream = BehaviorSubject<BannerAd?>.seeded(null);
   static BehaviorSubject<BannerAd?> attendancePhoneCaixaStream =
       BehaviorSubject<BannerAd?>.seeded(null);
-  static BehaviorSubject<BannerAd?> avantagesStream =
-      BehaviorSubject<BannerAd?>.seeded(null);
+  static BehaviorSubject<BannerAd?> avantagesStream = BehaviorSubject<BannerAd?>.seeded(null);
   static BehaviorSubject<BannerAd?> calendarPaymentDayStream =
       BehaviorSubject<BannerAd?>.seeded(null);
   static BehaviorSubject<BannerAd?> calendarSelectNisStream =
       BehaviorSubject<BannerAd?>.seeded(null);
-  static BehaviorSubject<BannerAd?> doubtsStream =
-      BehaviorSubject<BannerAd?>.seeded(null);
-  static BehaviorSubject<BannerAd?> homeStream =
-      BehaviorSubject<BannerAd?>.seeded(null);
+  static BehaviorSubject<BannerAd?> doubtsStream = BehaviorSubject<BannerAd?>.seeded(null);
+  static BehaviorSubject<BannerAd?> homeStream = BehaviorSubject<BannerAd?>.seeded(null);
   static BehaviorSubject<BannerAd?> howRegisterAprovacaoStream =
       BehaviorSubject<BannerAd?>.seeded(null);
   static BehaviorSubject<BannerAd?> howRegisterCadunicoStream =
       BehaviorSubject<BannerAd?>.seeded(null);
-  static BehaviorSubject<BannerAd?> howRegisterDocStream =
-      BehaviorSubject<BannerAd?>.seeded(null);
-  static BehaviorSubject<BannerAd?> howRegisterHomeStream =
-      BehaviorSubject<BannerAd?>.seeded(null);
+  static BehaviorSubject<BannerAd?> howRegisterDocStream = BehaviorSubject<BannerAd?>.seeded(null);
+  static BehaviorSubject<BannerAd?> howRegisterHomeStream = BehaviorSubject<BannerAd?>.seeded(null);
   static BehaviorSubject<BannerAd?> howRegisterReceiveStream =
       BehaviorSubject<BannerAd?>.seeded(null);
   static BehaviorSubject<BannerAd?> howRegisterRightStream =
       BehaviorSubject<BannerAd?>.seeded(null);
   static BehaviorSubject<BannerAd?> howWorkAvailableStream =
       BehaviorSubject<BannerAd?>.seeded(null);
-  static BehaviorSubject<BannerAd?> howWorkBenefitStream =
-      BehaviorSubject<BannerAd?>.seeded(null);
-  static BehaviorSubject<BannerAd?> howWorkHomeStream =
-      BehaviorSubject<BannerAd?>.seeded(null);
-  static BehaviorSubject<BannerAd?> howWorkHowGetStream =
+  static BehaviorSubject<BannerAd?> howWorkBenefitStream = BehaviorSubject<BannerAd?>.seeded(null);
+  static BehaviorSubject<BannerAd?> howWorkHomeStream = BehaviorSubject<BannerAd?>.seeded(null);
+  static BehaviorSubject<BannerAd?> howWorkHowGetStream = BehaviorSubject<BannerAd?>.seeded(null);
+  static BehaviorSubject<BannerAd?> howWorkHowWorkStream = BehaviorSubject<BannerAd?>.seeded(null);
+  static BehaviorSubject<BannerAd?> howWorkWhatValuesPaidStream =
       BehaviorSubject<BannerAd?>.seeded(null);
   static BehaviorSubject<BannerAd?> howWorkWhatIsStream =
       BehaviorSubject<BannerAd?>.seeded(null);
-  static BehaviorSubject<BannerAd?> howWorkWhatValuesPaidStream =
-      BehaviorSubject<BannerAd?>.seeded(null);
-  static BehaviorSubject<BannerAd?> loanApprovedStream =
-      BehaviorSubject<BannerAd?>.seeded(null);
-  static BehaviorSubject<BannerAd?> loanAskStream =
-      BehaviorSubject<BannerAd?>.seeded(null);
-  static BehaviorSubject<BannerAd?> loanHomeStream =
-      BehaviorSubject<BannerAd?>.seeded(null);
-  static BehaviorSubject<BannerAd?> loanHowWorkStream =
-      BehaviorSubject<BannerAd?>.seeded(null);
-  static BehaviorSubject<BannerAd?> loanRightsStream =
-      BehaviorSubject<BannerAd?>.seeded(null);
-  static BehaviorSubject<BannerAd?> loanRulesStream =
-      BehaviorSubject<BannerAd?>.seeded(null);
-  static BehaviorSubject<BannerAd?> loanWhereStream =
-      BehaviorSubject<BannerAd?>.seeded(null);
-  static BehaviorSubject<BannerAd?> newsStream =
-      BehaviorSubject<BannerAd?>.seeded(null);
-  static BehaviorSubject<BannerAd?> queryOptionsStream =
-      BehaviorSubject<BannerAd?>.seeded(null);
-  static BehaviorSubject<BannerAd?> queryResultStream =
-      BehaviorSubject<BannerAd?>.seeded(null);
-  static BehaviorSubject<BannerAd?> querySearchStream =
-      BehaviorSubject<BannerAd?>.seeded(null);
-  static BehaviorSubject<BannerAd?> quizErrorStream =
-      BehaviorSubject<BannerAd?>.seeded(null);
-  static BehaviorSubject<BannerAd?> quizHomeStream =
-      BehaviorSubject<BannerAd?>.seeded(null);
-  static BehaviorSubject<BannerAd?> quizStream =
-      BehaviorSubject<BannerAd?>.seeded(null);
-  static BehaviorSubject<BannerAd?> quizSuccessStream =
-      BehaviorSubject<BannerAd?>.seeded(null);
-  static BehaviorSubject<BannerAd?> rightsStream =
-      BehaviorSubject<BannerAd?>.seeded(null);
-  static BehaviorSubject<BannerAd?> searchNisCardStream =
-      BehaviorSubject<BannerAd?>.seeded(null);
-  static BehaviorSubject<BannerAd?> searchNisCpfStream =
-      BehaviorSubject<BannerAd?>.seeded(null);
-  static BehaviorSubject<BannerAd?> searchNisHomeStream =
-      BehaviorSubject<BannerAd?>.seeded(null);
-  static BehaviorSubject<BannerAd?> searchNisInssStream =
-      BehaviorSubject<BannerAd?>.seeded(null);
-  static BehaviorSubject<BannerAd?> searchNisPhoneStream =
-      BehaviorSubject<BannerAd?>.seeded(null);
-  static BehaviorSubject<BannerAd?> noFoundStream =
-      BehaviorSubject<BannerAd?>.seeded(null);
-  static BehaviorSubject<BannerAd?> exitStream =
-      BehaviorSubject<BannerAd?>.seeded(null);
-  static BehaviorSubject<BannerAd?> nisSearchStream =
-      BehaviorSubject<BannerAd?>.seeded(null);
-  static BehaviorSubject<BannerAd?> nisResultStream =
-      BehaviorSubject<BannerAd?>.seeded(null);
-  static BehaviorSubject<BannerAd?> nisOptionsStream =
-      BehaviorSubject<BannerAd?>.seeded(null);
+  static BehaviorSubject<BannerAd?> loanApprovedStream = BehaviorSubject<BannerAd?>.seeded(null);
+  static BehaviorSubject<BannerAd?> loanAskStream = BehaviorSubject<BannerAd?>.seeded(null);
+  static BehaviorSubject<BannerAd?> loanHomeStream = BehaviorSubject<BannerAd?>.seeded(null);
+  static BehaviorSubject<BannerAd?> loanHowWorkStream = BehaviorSubject<BannerAd?>.seeded(null);
+  static BehaviorSubject<BannerAd?> loanRightsStream = BehaviorSubject<BannerAd?>.seeded(null);
+  static BehaviorSubject<BannerAd?> loanRulesStream = BehaviorSubject<BannerAd?>.seeded(null);
+  static BehaviorSubject<BannerAd?> loanWhereStream = BehaviorSubject<BannerAd?>.seeded(null);
+  static BehaviorSubject<BannerAd?> newsStream = BehaviorSubject<BannerAd?>.seeded(null);
+  static BehaviorSubject<BannerAd?> queryOptionsStream = BehaviorSubject<BannerAd?>.seeded(null);
+  static BehaviorSubject<BannerAd?> queryResultStream = BehaviorSubject<BannerAd?>.seeded(null);
+  static BehaviorSubject<BannerAd?> querySearchStream = BehaviorSubject<BannerAd?>.seeded(null);
+  static BehaviorSubject<BannerAd?> quizErrorStream = BehaviorSubject<BannerAd?>.seeded(null);
+  static BehaviorSubject<BannerAd?> quizHomeStream = BehaviorSubject<BannerAd?>.seeded(null);
+  static BehaviorSubject<BannerAd?> quizStream = BehaviorSubject<BannerAd?>.seeded(null);
+  static BehaviorSubject<BannerAd?> quizSuccessStream = BehaviorSubject<BannerAd?>.seeded(null);
+  static BehaviorSubject<BannerAd?> rightsStream = BehaviorSubject<BannerAd?>.seeded(null);
+  static BehaviorSubject<BannerAd?> searchNisCardStream = BehaviorSubject<BannerAd?>.seeded(null);
+  static BehaviorSubject<BannerAd?> searchNisCpfStream = BehaviorSubject<BannerAd?>.seeded(null);
+  static BehaviorSubject<BannerAd?> searchNisHomeStream = BehaviorSubject<BannerAd?>.seeded(null);
+  static BehaviorSubject<BannerAd?> searchNisInssStream = BehaviorSubject<BannerAd?>.seeded(null);
+  static BehaviorSubject<BannerAd?> searchNisPhoneStream = BehaviorSubject<BannerAd?>.seeded(null);
+  static BehaviorSubject<BannerAd?> noFoundStream = BehaviorSubject<BannerAd?>.seeded(null);
+  static BehaviorSubject<BannerAd?> exitStream = BehaviorSubject<BannerAd?>.seeded(null);
+  static BehaviorSubject<BannerAd?> nisSearchStream = BehaviorSubject<BannerAd?>.seeded(null);
+  static BehaviorSubject<BannerAd?> nisResultStream = BehaviorSubject<BannerAd?>.seeded(null);
+  static BehaviorSubject<BannerAd?> nisOptionsStream = BehaviorSubject<BannerAd?>.seeded(null);
+  static BehaviorSubject<BannerAd?> rulesStream = BehaviorSubject<BannerAd?>.seeded(null);
 
   static BehaviorSubject<BannerAd?> stream(AdBannerEnum enumer) {
     switch (enumer) {
@@ -104,8 +71,6 @@ class AdBannerStorage {
         return avantagesStream;
       case AdBannerEnum.calendarPaymentDay:
         return calendarPaymentDayStream;
-      case AdBannerEnum.calendarSelectNis:
-        return calendarSelectNisStream;
       case AdBannerEnum.doubts:
         return doubtsStream;
       case AdBannerEnum.home:
@@ -130,10 +95,10 @@ class AdBannerStorage {
         return howWorkHomeStream;
       case AdBannerEnum.howWorkHowGet:
         return howWorkHowGetStream;
-      case AdBannerEnum.howWorkWhatIsPage:
+      case AdBannerEnum.howWorkHowWorkPage:
+        return howWorkHowWorkStream;
+      case AdBannerEnum.howWorkWhatIs:
         return howWorkWhatIsStream;
-      case AdBannerEnum.howWorkWhatValuesPaid:
-        return howWorkWhatValuesPaidStream;
       case AdBannerEnum.loanApproved:
         return loanApprovedStream;
       case AdBannerEnum.loanAsk:
@@ -182,6 +147,8 @@ class AdBannerStorage {
         return nisResultStream;
       case AdBannerEnum.nisOptions:
         return nisOptionsStream;
+      case AdBannerEnum.rules:
+        return rulesStream;
       default:
         return noFoundStream;
     }

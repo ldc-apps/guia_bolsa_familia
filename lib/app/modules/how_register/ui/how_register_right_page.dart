@@ -9,6 +9,7 @@ import 'package:aid_brazil/app/components/h.dart';
 import 'package:aid_brazil/app/components/module_title.dart';
 import 'package:aid_brazil/app/components/w.dart';
 import 'package:aid_brazil/app/modules/how_register/how_register_model.dart';
+import 'package:aid_brazil/app/modules/quiz/ui/quiz_home_page.dart';
 import 'package:aid_brazil/app/utils/app_colors.dart';
 import 'package:aid_brazil/app/utils/app_theme.dart';
 import 'package:aid_brazil/app/utils/global_resource.dart';
@@ -108,7 +109,7 @@ class _HowRegisterRightPageState extends State<HowRegisterRightPage> {
                       data: ThemeData(dividerColor: Colors.transparent),
                       child: Column(
                         children: [
-                          for (var e in DoubtHowRegisterItem.itens(_))
+                          for (var e in DoubtHowRegisterItem.itensRights(_))
                             _itemDoubtHowRegister(context, e),
                         ],
                       )),
@@ -120,7 +121,10 @@ class _HowRegisterRightPageState extends State<HowRegisterRightPage> {
             ),
           ],
         ),
-        BottomButton('Responda o questionário', Icons.rule_outlined, () {})
+        BottomButton('Responda o questionário', Icons.rule_outlined, () {
+          pops(context, 2);
+          push(context, const QuizHomePage());
+        })
       ],
     );
   }
@@ -155,8 +159,7 @@ class _HowRegisterRightPageState extends State<HowRegisterRightPage> {
     );
   }
 
-  Widget _itemDoubtHowRegister(
-      BuildContext context, DoubtHowRegisterItem item) {
+  Widget _itemDoubtHowRegister(BuildContext context, DoubtHowRegisterItem item) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(12),
       child: Container(
@@ -167,16 +170,13 @@ class _HowRegisterRightPageState extends State<HowRegisterRightPage> {
         ),
         child: ExpansionTile(
           tilePadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
-          childrenPadding:
-              const EdgeInsets.only(bottom: 16, right: 16, left: 16),
+          childrenPadding: const EdgeInsets.only(bottom: 16, right: 16, left: 16),
           collapsedIconColor: AppColors.greenDark,
           iconColor: AppColors.greenDark,
           title: Text(
             item.title,
             style: const TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w900,
-                color: AppColors.greenDark),
+                fontSize: 20, fontWeight: FontWeight.w900, color: AppColors.greenDark),
           ),
           expandedCrossAxisAlignment: CrossAxisAlignment.start,
           expandedAlignment: Alignment.centerLeft,
@@ -188,8 +188,7 @@ class _HowRegisterRightPageState extends State<HowRegisterRightPage> {
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Text(item.subtitle,
-                  style: const TextStyle(
-                      color: AppColors.greenDark, fontSize: 18, height: 1.4)),
+                  style: const TextStyle(color: AppColors.greenDark, fontSize: 18, height: 1.4)),
             )
           ],
         ),

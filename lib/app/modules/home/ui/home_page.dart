@@ -1,4 +1,5 @@
 import 'package:aid_brazil/app/components/exit_page.dart';
+import 'package:aid_brazil/app/modules/rules/rules_page.dart';
 import 'package:aid_brazil/app/utils/global_resource.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -27,6 +28,8 @@ class HomePage extends JourneyStatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final ScrollController _scrollController = ScrollController();
+
   @override
   void initState() {
     AdController.fetchInterstitialAd(AdController.adConfig.intersticial.id);
@@ -61,10 +64,9 @@ class _HomePageState extends State<HomePage> {
           shared.setBool('rate', false);
         }
         if (!rate!) {
-          await showDialog(
-              context: context, builder: (_) => const RateDialog());
+          await showDialog(context: context, builder: (_) => const RateDialog());
         }
-        push(context, ExitPage());
+        push(context, const ExitPage());
         return true;
       },
       child: AppScaffold(
@@ -78,6 +80,7 @@ class _HomePageState extends State<HomePage> {
   Widget _body(_) {
     final homeItens = HomeItem.itens(_);
     return ListView(
+      controller: _scrollController,
       children: [
         _topCard(),
         const H(24),
@@ -85,6 +88,37 @@ class _HomePageState extends State<HomePage> {
           padding: const EdgeInsets.symmetric(horizontal: 24),
           child: AppBannerAd(AdBannerStorage.homeStream),
         ),
+        const H(24),
+        Container(
+          margin: const EdgeInsets.symmetric(horizontal: 16),
+          width: double.maxFinite,
+          height: 120,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(12),
+              image: DecorationImage(image: NetworkImage('https://ldcapps.com/wp-content/uploads/2023/03/pessoas-segurando-cartao-do-bolsa-familia-cropped.png'), fit: BoxFit.cover)),
+        ),
+        const H(16),
+        Container(
+          margin: const EdgeInsets.symmetric(horizontal: 16),
+          width: double.maxFinite,
+          child: TextButton(
+            style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(const Color(0xFF0C5C0A)),
+                shape: MaterialStateProperty.all(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                ),
+                padding: MaterialStateProperty.all<EdgeInsets>(
+                    const EdgeInsets.symmetric(horizontal: 4, vertical: 14))),
+            onPressed: () => push(context, const RulesPage()),
+            child: const Text(
+              'CONHEÇA AS NOVAS REGRAS',
+              style: TextStyle(color: Color(0xFFFFE500), fontSize: 22, fontWeight: FontWeight.bold),
+            ),
+          ),
+        ),
+        const H(16),
         const Padding(
           padding: EdgeInsets.all(20),
           child: ModuleTitle(
@@ -117,8 +151,7 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             children: [
               const Divisor(),
-              for (var e in HomeItem.bottomItens(_))
-                _bottomHomeItem(context, e),
+              for (var e in HomeItem.bottomItens(_)) _bottomHomeItem(context, e),
               const Divisor(),
             ],
           ),
@@ -153,16 +186,13 @@ class _HomePageState extends State<HomePage> {
                     child: Text(
                   item.label,
                   style: const TextStyle(
-                      color: AppColors.greenDark,
-                      fontSize: 20,
-                      fontWeight: FontWeight.w500),
+                      color: AppColors.greenDark, fontSize: 20, fontWeight: FontWeight.w500),
                 )),
                 Container(
                   width: 40,
                   height: 40,
                   decoration: BoxDecoration(
-                      color: const Color(0xFFE45200),
-                      borderRadius: BorderRadius.circular(4)),
+                      color: const Color(0xFFE45200), borderRadius: BorderRadius.circular(4)),
                   child: Icon(
                     item.action,
                     color: AppColors.white,
@@ -217,45 +247,48 @@ class _HomePageState extends State<HomePage> {
       padding: const EdgeInsets.all(20),
       decoration: const BoxDecoration(
           color: AppColors.greenDark,
-          borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(24),
-              bottomRight: Radius.circular(24))),
+          borderRadius:
+              BorderRadius.only(bottomLeft: Radius.circular(24), bottomRight: Radius.circular(24))),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          IntrinsicWidth(
-            child: Container(
-              padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 10),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                color: const Color(0xFF0A4A08),
-              ),
-              child: Row(
-                children: const [
-                  Icon(
-                    Icons.headset_mic_outlined,
-                    size: 18,
-                    color: AppColors.greenLight,
-                  ),
-                  W(8),
-                  Text(
-                    'Atendimento',
-                    style: TextStyle(color: AppColors.white, fontSize: 18),
-                  )
-                ],
+          InkWell(
+            onTap: () {
+              _scrollController.animateTo(_scrollController.position.maxScrollExtent,
+                  duration: const Duration(seconds: 1), curve: Curves.ease);
+            },
+            child: IntrinsicWidth(
+              child: Container(
+                padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 10),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8),
+                  color: const Color(0xFF0A4A08),
+                ),
+                child: Row(
+                  children: const [
+                    Icon(
+                      Icons.headset_mic_outlined,
+                      size: 18,
+                      color: AppColors.greenLight,
+                    ),
+                    W(8),
+                    Text(
+                      'Atendimento',
+                      style: TextStyle(color: AppColors.white, fontSize: 18),
+                    )
+                  ],
+                ),
               ),
             ),
           ),
           const H(24),
-          PageTitle(_getTitleByHour,
-              'Consulte agora a disponibilidade\ndo seu benefício.'),
+          PageTitle(_getTitleByHour, 'Consulte agora a disponibilidade\ndo seu benefício.'),
           const H(32),
           SizedBox(
             width: double.maxFinite,
             child: TextButton(
               style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all<Color>(AppColors.greenLight),
+                  backgroundColor: MaterialStateProperty.all<Color>(AppColors.greenLight),
                   elevation: MaterialStateProperty.all(4),
                   shape: MaterialStateProperty.all(
                     RoundedRectangleBorder(
@@ -268,9 +301,7 @@ class _HomePageState extends State<HomePage> {
               child: const Text(
                 'CONSULTAR BOLSA FAMILIA',
                 style: TextStyle(
-                    color: AppColors.greenDark,
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold),
+                    color: AppColors.greenDark, fontSize: 22, fontWeight: FontWeight.bold),
               ),
             ),
           ),

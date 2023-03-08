@@ -48,11 +48,8 @@ class Quiz {
             label: 'Sim',
           ),
           QuizOption(
-            onTap: () => push(
-                context,
-                masculino
-                    ? QuizError.idadeMinima()
-                    : voceTemUmOuMaisFilhos(context)),
+            onTap: () =>
+                push(context, masculino ? QuizError.idadeMinima() : voceTemUmOuMaisFilhos(context)),
             label: 'Não',
           ),
         ],
@@ -88,8 +85,7 @@ class Quiz {
     return QuizPage(
       Quiz(
         percentage: 60,
-        title:
-            'Você é dependente de alguém que declarou imposto de renda no ano passado?',
+        title: 'Você é dependente de alguém que declarou imposto de renda no ano passado?',
         options: [
           QuizOption(
             onTap: () => push(context, QuizError.linhaExtremaPobreza()),
@@ -111,8 +107,7 @@ class Quiz {
         title: 'Você já estava inscrito(a) no Bolsa Família?',
         options: [
           QuizOption(
-            onTap: () =>
-                push(context, atualizaouSeuCadastroNosUltimos2Anos(context)),
+            onTap: () => push(context, atualizaouSeuCadastroNosUltimos2Anos(context)),
             label: 'Sim',
           ),
           QuizOption(
@@ -179,8 +174,7 @@ class Quiz {
         title: 'Você está inscrito no Cadastro Único?',
         options: [
           QuizOption(
-            onTap: () =>
-                push(context, atualizaouSeuCadastroNosUltimos2Anos(context)),
+            onTap: () => push(context, atualizaouSeuCadastroNosUltimos2Anos(context)),
             label: 'Sim',
           ),
           QuizOption(
@@ -298,11 +292,10 @@ class Quiz {
     return QuizPage(
       Quiz(
         percentage: 40,
-        title: 'A renda mensal em sua casa, é maior que R\$210,00 por pessoa?',
+        title: 'A renda mensal em sua casa, é maior que R\$218,00 por pessoa?',
         options: [
           QuizOption(
-            onTap: () =>
-                push(context, QuizError.rendaFamiliaNaoPodeUltrapassar210()),
+            onTap: () => push(context, QuizError.rendaFamiliaNaoPodeUltrapassar210()),
             label: 'Sim',
           ),
           QuizOption(
@@ -407,8 +400,7 @@ class QuizError {
   static QuizErrorPage estagiariosNaoParticipam() => QuizErrorPage(
         QuizError(
           title: 'Estagiários não participam do Bolsa Família',
-          subtitle:
-              'Pessoas estagiando em instituições públicas, privadas e até mesmo bolsistas.',
+          subtitle: 'Pessoas estagiando em instituições públicas, privadas e até mesmo bolsistas.',
         ),
       );
 
@@ -422,8 +414,7 @@ class QuizError {
 
   static QuizErrorPage linhaExtremaPobreza() => QuizErrorPage(
         QuizError(
-          title:
-              'Você precisa estar na linha da extrema pobreza para participar.',
+          title: 'Você precisa estar na linha da extrema pobreza para participar.',
           subtitle: '',
         ),
       );
@@ -431,23 +422,20 @@ class QuizError {
   static QuizErrorPage morarNoBrasil() => QuizErrorPage(
         QuizError(
           title: 'Você precisa morar no Brasil para participar... ',
-          subtitle:
-              'Para participar do programa Bolsa Família você estar morando dentro do país.',
+          subtitle: 'Para participar do programa Bolsa Família você estar morando dentro do país.',
         ),
       );
 
   static QuizErrorPage precisaCadUnicoAtualizado() => QuizErrorPage(
         QuizError(
           title: 'Pra participar você precisa ter seu CádÚnico atualizado.',
-          subtitle:
-              'Procure um CRAS para atualizar as informações do seu cadastro.',
+          subtitle: 'Procure um CRAS para atualizar as informações do seu cadastro.',
         ),
       );
 
   static QuizErrorPage rendaFamiliaNaoPodeUltrapassar210() => QuizErrorPage(
         QuizError(
-          title:
-              'A sua renda famíliar não pode ultrapassar R\$210,00 por pessa,',
+          title: 'A sua renda famíliar não pode ultrapassar R\$218,00 por pessa,',
           subtitle: '',
         ),
       );
@@ -462,8 +450,7 @@ class QuizError {
   static QuizErrorPage voceJaTemUmEmprego() => QuizErrorPage(
         QuizError(
           title: 'Ops, parece que você já tem um emprego.',
-          subtitle:
-              'Para participar do programa Bolsa Família você precisa estar desempregado.',
+          subtitle: 'Para participar do programa Bolsa Família você precisa estar desempregado.',
         ),
       );
 }

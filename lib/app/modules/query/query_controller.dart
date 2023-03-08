@@ -69,6 +69,7 @@ class QueryController {
         final query = QueryResult.fromAid(response.data);
         query.paymentDate = getPaymentDate(query);
         setNis(querySearchCreate, query.nis);
+        await AdController.checkAndshowQueryAd();
         push(context, QueryResultPage(query));
       } else {
         await _onErrorQuery(context);

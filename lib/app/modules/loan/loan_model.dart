@@ -34,15 +34,15 @@ class DoubtLoanItem {
         ),
         DoubtLoanItem(
           'Qual o valor máximo do empréstimo?',
-          'As instituições vão poder descontar no máximo 40% do valor permanente do Bolsa Família, que é R\$ 400. O desconto dá R\$ 160, o que significa que sobraria até R\$ 240 para cair na conta do beneficiário que tiver um empréstimo contratado.A modalidade considera o valor de R\$ 400 do benefício, porque o pagamento de R\$ 600 será feito até dezembro deste ano.',
+          'As instituições vão poder descontar no máximo 5% do valor permanente do Auxílio, que é R\$ 600. O desconto dá R\$ 30, o que significa que sobraria até R\$ 570 para cair na conta do beneficiário que tiver um empréstimo contratado.',
         ),
         DoubtLoanItem(
           'Qual o prazo máximo de pagamento?',
-          'Até 24 meses (dois anos) para pagar.',
+          'Até 6 meses (6 meses) para pagar.',
         ),
         DoubtLoanItem(
           'Quais cuidados tomar?',
-          'As taxas de juros cobradas são altas. O beneficiário deve avaliar se vale e se o empréstimo não irá comprometer o sustento da família.Lembre-se que o pagamento da dívida é descontado automaticamente do benefício, ou seja, não existe a opção de não pagar.',
+          'As taxas de juros cobradas são altas. O beneficiário deve avaliar se vale e se o empréstimo não irá comprometer o sustento da família.\n\nLembre-se que o pagamento da dívida é descontado automaticamente do benefício, ou seja, não existe a opção de não pagar.',
         ),
       ];
 
@@ -53,11 +53,11 @@ class DoubtLoanItem {
         ),
         DoubtLoanItem(
           'O que é necessário para se inscrever no Bolsa Família?',
-          'São famílias com renda familiar mensal por pessoa entre R\$ 105,01 e R\$ 210,00 (cento e cinco reais e um centavo e duzentos e dez reais).',
+          'São famílias com renda familiar mensal por pessoa entre R\$ 105,01 e R\$ 218,00 (cento e cinco reais e um centavo e duzentos e dezoito reais).',
         ),
         DoubtLoanItem(
           'O que são famílias em regra de emancipação?',
-          'São famílias cujo beneficiário consegue um emprego formal e a renda ultrapassa a linha de pobreza (R\$ 210 por pessoa). Este poderá continuar recebendo o Bolsa Família por até dois anos, desde que a renda familiar mensal não ultrapasse R\$ 252 por pessoa.',
+          'São famílias cujo beneficiário consegue um emprego formal e a renda ultrapassa a linha de pobreza (R\$ 218 por pessoa). Este poderá continuar recebendo o Bolsa Família por até dois anos, desde que a renda familiar mensal não ultrapasse R\$ 252 por pessoa.',
         ),
       ];
 }
@@ -105,35 +105,30 @@ class LoanItem {
 
 class SearchNisStep {
   static List<SearchNisStep> get itensCPF => [
-        SearchNisStep(1,
-            'Acesse o site CNIS (Cadastro Nacional de Informações Sociais);'),
+        SearchNisStep(1, 'Acesse o site CNIS (Cadastro Nacional de Informações Sociais);'),
         SearchNisStep(2, 'Selecione a opção "Cidadão";',
             url: 'https://miro.medium.com/max/640/0*i1v1In2Tn4Stnwnl.jpg'),
         SearchNisStep(3,
             'No canto superior direito, toque no “MENU”, após isso clique em “Inscrição”, e por fim clique em “Filiado”;',
             url: 'https://miro.medium.com/max/640/0*i1v1In2Tn4Stnwnl.jpg'),
-        SearchNisStep(4,
-            'Preencha todos os campos solicitados, incluindo o número do CPF;',
+        SearchNisStep(4, 'Preencha todos os campos solicitados, incluindo o número do CPF;',
             url: 'https://miro.medium.com/max/640/0*i1v1In2Tn4Stnwnl.jpg'),
-        SearchNisStep(
-            5, 'Uma mensagem com a informação do seu número NIT/PIS aparecerá.',
+        SearchNisStep(5, 'Uma mensagem com a informação do seu número NIT/PIS aparecerá.',
             url: 'https://miro.medium.com/max/640/0*i1v1In2Tn4Stnwnl.jpg'),
       ];
   static List<SearchNisStep> get itensNIS => [
         SearchNisStep(1, 'Acesse o site oficial Meu INSS;'),
         SearchNisStep(2, 'Em seguida, entre com o seu login e senha;',
             url: 'https://miro.medium.com/max/640/0*i1v1In2Tn4Stnwnl.jpg'),
-        SearchNisStep(3,
-            'Caso não possua cadastro, clique em “Entrar” e preencha seus dados cadastrais;',
+        SearchNisStep(
+            3, 'Caso não possua cadastro, clique em “Entrar” e preencha seus dados cadastrais;',
+            url: 'https://miro.medium.com/max/640/0*i1v1In2Tn4Stnwnl.jpg'),
+        SearchNisStep(4, 'Após o preenchimento, autorize o uso dos seus dados pessoais;',
+            url: 'https://miro.medium.com/max/640/0*i1v1In2Tn4Stnwnl.jpg'),
+        SearchNisStep(5, 'Confirme seus dados respondendo algumas perguntas feitas pelo sistema;',
             url: 'https://miro.medium.com/max/640/0*i1v1In2Tn4Stnwnl.jpg'),
         SearchNisStep(
-            4, 'Após o preenchimento, autorize o uso dos seus dados pessoais;',
-            url: 'https://miro.medium.com/max/640/0*i1v1In2Tn4Stnwnl.jpg'),
-        SearchNisStep(5,
-            'Confirme seus dados respondendo algumas perguntas feitas pelo sistema;',
-            url: 'https://miro.medium.com/max/640/0*i1v1In2Tn4Stnwnl.jpg'),
-        SearchNisStep(6,
-            'Faça login novamente e acesse a opção “Meu Cadastro”, no canto superior esquerdo;',
+            6, 'Faça login novamente e acesse a opção “Meu Cadastro”, no canto superior esquerdo;',
             url: 'https://miro.medium.com/max/640/0*i1v1In2Tn4Stnwnl.jpg'),
         SearchNisStep(7,
             'E pronto! Nessa opção, você encontra os seus dados cadastrados, incluindo o número do NIS.',
